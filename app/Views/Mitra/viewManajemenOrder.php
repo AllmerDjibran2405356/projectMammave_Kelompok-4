@@ -48,6 +48,12 @@
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
                                     <button type="submit">Isi Order</button>
                                 </form>
+                                <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>">
+                                    <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
+                                    <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
+                                    <input type="hidden" name="Nama_Depan" value="<?= esc($order['Nama_Depan']) ?>">
+                                    <button type="submit">Update Status</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -55,9 +61,8 @@
             </table>
         </div>
 
-        <div class="orderContent">
-            <h1>Isi Order</h1>
-            <button onclick="closeOrderContent()">x</button>
+        <div class="orderContent <?= isset($show_order_content) && $show_order_content ? 'active' : '' ?>">
+            <h1>Isi Order</h1><button onclick="closeOrderContent()">x</button>
             <table>
                 <thead>
                     <tr>
@@ -84,26 +89,33 @@
             </table>
         </div>
 
-        <div class="updateStatus">
-            <h2>Update Status Pemesanan</h2>
-            <form>
+        <div class="updateStatus <?= isset($show_update_status) && $show_update_status ? 'active' : '' ?>">
+            <h2>Update Status Pemesanan</h2><button onclick="closeUpdateStatus()">x</button>
+            <form action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>" method="post">
+            <input type="hidden" name="ID_User" value="<?= esc($selected_user ?? '') ?>">
+            <input type="hidden" name="Waktu_Order" value="<?= esc($selected_waktu_order ?? '') ?>">
                 <table>
                     <thead>
                         <tr>
                             <td>Nama Pelanggan</td>
                             <td>Status Order</td>
+                            <td>Aksi</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><?= esc($item->Nama_Depan) ?></td>
+                            <td><?= esc($selected_nama ?? 'Tidak diketahui') ?> <br>
+                            <small><?= esc($selected_waktu_order ?? '') ?></small></td>
                             <td>
-                                <select>
-                                    <option>Diproses</option>
-                                    <option>Dikirim</option>
-                                    <option>Selesai</option>
-                                    <option>Dibatalkan</option>
+                                <select name="Order_Status">
+                                    <option value="Diproses">Diproses</option>
+                                    <option value="Dikirim">Dikirim</option>
+                                    <option value="Selesai">Selesai</option>
+                                    <option value="Dibatalkan">Dibatalkan</option>
                                 </select>
+                            </td>
+                            <td>
+                                <button type="submit">Update Status</button>
                             </td>
                         </tr>
                     </tbody>

@@ -24,6 +24,7 @@ $routes->get('/Mitra/controllerManajemenMenu/deleteKategori/(:num)', 'Mitra\cont
 //routes manajemen order
 $routes->get('/Mitra/controllerManajemenOrder', 'Mitra\controllerManajemenOrder::viewManajemenOrder');
 $routes->post('/Mitra/controllerManajemenOrder/orderContent', 'Mitra\controllerManajemenOrder::orderContent');
+$routes->post('/Mitra/controllerManajemenOrder/updateStatus', 'Mitra\controllerManajemenOrder::updateStatus');
 
 //routes pelanggan
 

@@ -1,0 +1,8 @@
+.orderContent,
+.updateStatus{
+    display: none;
+}
+.orderContent.active,
+.updateStatus.active{
+    display: block;
+}
