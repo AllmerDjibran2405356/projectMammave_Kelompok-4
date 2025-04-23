@@ -1,0 +1,18 @@
+.menuList{
+    display: block;
+}
+.editMenu{
+    display: none;
+}
+.addMenu{
+    display: none;
+}
+.kategori{
+    display: none;
+}
+.manageMenu{
+    display: none;
+}
+.manageKategori{
+    display: none;
+}
