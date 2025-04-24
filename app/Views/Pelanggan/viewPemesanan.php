@@ -36,7 +36,13 @@
             <?php if (!empty($keranjang)): ?>
                 <ul>
                     <?php foreach ($keranjang as $id_menu => $jumlah): ?>
-                        <li>ID Menu: <?= esc($id_menu) ?> | Jumlah: <?= esc($jumlah) ?></li>
+                        <li>
+                            ID Menu: <?= esc($nama_menu_keranjang[$id_menu]) ?> | Jumlah: <?= esc($jumlah) ?>
+                            <form action="<?= site_url('/Pelanggan/controllerPemesanan/kurangiKeranjang') ?>" method="post" style="display:inline;">
+                                <input type="hidden" name="ID_Menu" value="<?= esc($id_menu) ?>">
+                                <button type="submit">Kurangi</button>
+                            </form>
+                        </li>
                     <?php endforeach ?>
                 </ul>
                 <form action="<?= site_url('/Pelanggan/controllerPemesanan/checkout') ?>" method="post">

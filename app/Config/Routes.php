@@ -33,8 +33,9 @@ $routes->get('/Pelanggan/controllerHomepage', 'Pelanggan\controllerHomepage::vie
 
 //pemesanan
 $routes->get('/Pelanggan/controllerPemesanan', 'Pelanggan\controllerPemesanan::viewPemesanan');
-$routes->post('Pelanggan/controllerPemesanan/tambahKeranjang', 'Pelanggan\controllerPemesanan::tambahKeranjang');
-$routes->post('Pelanggan/controllerPemesanan/checkout', 'Pelanggan\controllerPemesanan::checkout');
+$routes->post('/Pelanggan/controllerPemesanan/tambahKeranjang', 'Pelanggan\controllerPemesanan::tambahKeranjang');
+$routes->post('/Pelanggan/controllerPemesanan/kurangiKeranjang', 'Pelanggan\controllerPemesanan::kurangiKeranjang');
+$routes->post('/Pelanggan/controllerPemesanan/checkout', 'Pelanggan\controllerPemesanan::checkout');
 
 //register akun pelanggan
 $routes->get('/Pelanggan/controllerRegisterAkunPelanggan', 'Pelanggan\controllerRegisterAkunPelanggan::viewRegister');

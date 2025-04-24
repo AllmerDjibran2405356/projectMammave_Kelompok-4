@@ -19,10 +19,16 @@ class controllerPemesanan extends BaseController{
                                ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
                                ->findAll();
 
+        $nama_menu_keranjang = [];
+        foreach($menu_list as $menu){
+            $nama_menu_keranjang[$menu['ID_Menu']] = $menu['Nama_Menu'];
+        }
+
         $data = [
             'menu_list' => $menu_list,
             'menu_kategori' => $kategoriModel->findAll(),
-            'keranjang' => session()->get('keranjang') ?? []
+            'keranjang' => session()->get('keranjang') ?? [],
+            'nama_menu_keranjang' => $nama_menu_keranjang
         ];
 
         return view('Pelanggan/viewPemesanan', $data);
@@ -48,7 +54,7 @@ class controllerPemesanan extends BaseController{
         return redirect()->back()->with('success', 'Berhasil ditambahkan ke keranjang.');
     }
 
-    public function checkout() {
+    public function checkout(){
         if(!session()->get('isLoggedIn')){
             return redirect()->to('/Pelanggan/controllerLoginAkunPelanggan')->with('error', 'Harap login terlebih dahulu');
         }
@@ -73,6 +79,23 @@ class controllerPemesanan extends BaseController{
     
         session()->remove('keranjang');
         return redirect()->back()->with('success', 'Pemesanan berhasil!');
+    }
+
+    public function kurangiKeranjang(){
+    $session = session();
+    $id_menu = $this->request->getPost('ID_Menu');
+
+    $keranjang = $session->get('keranjang') ?? [];
+
+    if(isset($keranjang[$id_menu])){
+        $keranjang[$id_menu]--;
+        if($keranjang[$id_menu] <= 0){
+            unset($keranjang[$id_menu]);
+        }
+    }
+
+    $session->set('keranjang', $keranjang);
+    return redirect()->back();
     }
 }
 ?>
