@@ -61,7 +61,7 @@ class controllerManajemenOrder extends BaseController{
         $id_user = $this->request->getPost('ID_User');
         $waktu_order = $this->request->getPost('Waktu_Order');
         $nama_depan = $this->request->getPost('Nama_Depan');
-        $new_status = $this->request->getPost('Order_Status'); // bisa null kalau cuma mau tampilkan form
+        $new_status = $this->request->getPost('Order_Status');
 
         $orderListModel = new order_list();
         $orderStatusModel = new order_status();
