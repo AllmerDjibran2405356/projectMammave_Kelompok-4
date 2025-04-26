@@ -11,12 +11,13 @@
             <p>Riwayat Pemesanan <?= esc($session->get('Nama_Depan')) ?></p>
         <?php endif; ?>
         <div>
-            <h2>Dalam Proses</h2>
+            <h1>Dalam Proses</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Waktu Order</th>
                         <th>Status Order</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,13 @@
                         <tr>
                             <td><?= esc($data['Waktu_Order']) ?></td>
                             <td><?= esc($data['Order_Status']) ?></td>
+                            <td>
+                                <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
+                                    <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
+                                    <input type="hidden" name="Waktu_Order" value="<?= esc($data['Waktu_Order']) ?>">
+                                    <button type="submit">Isi Order</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -31,12 +39,13 @@
         </div>
 
         <div>
-            <h2>Order yang Sudah Selesai</h2>
+            <h1>Order yang Sudah Selesai</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Waktu Order</th>
                         <th>Status Order</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,8 +53,41 @@
                         <tr>
                             <td><?= esc($data['Waktu_Order']) ?></td>
                             <td><?= esc($data['Order_Status']) ?></td>
+                            <td>
+                                <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
+                                    <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
+                                    <input type="hidden" name="Waktu_Order" value="<?= esc($data['Waktu_Order']) ?>">
+                                    <button type="submit">Isi Order</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h1>Isi Order</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Menu</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(!empty($isi_order)): ?>
+                        <?php foreach($isi_order as $item): ?>
+                            <tr>
+                                <td><?= esc($item->Nama_Menu) ?></td>
+                                <td><?= esc($item->Jumlah) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="2">Tidak ada order</td>
+                        </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

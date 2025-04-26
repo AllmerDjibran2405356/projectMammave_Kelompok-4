@@ -39,6 +39,7 @@ $routes->post('/Pelanggan/controllerPemesanan/checkout', 'Pelanggan\controllerPe
 
 //riwayat pemesanan
 $routes->get('/Pelanggan/controllerRiwayatPemesanan', 'Pelanggan\controllerRiwayatOrder::viewRiwayatOrder');
+$routes->post('/Pelanggan/controllerRiwayatPemesanan/isiOrder', 'Pelanggan\controllerRiwayatOrder::isiOrder');
 
 //register akun pelanggan
 $routes->get('/Pelanggan/controllerRegisterAkunPelanggan', 'Pelanggan\controllerRegisterAkunPelanggan::viewRegister');

@@ -39,17 +39,17 @@ class controllerManajemenOrder extends BaseController{
                                     ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order', 'menu_list.Nama_Menu']);
     
         $query = $isi_order->get();
-        $data['isi_order'] = $query->getResult();
-
-        $orderListModel = new order_list();
 
         $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->findAll();
 
-        $data['order_list'] = $order_list;
-        $data['order_status'] = (new order_status())->findAll();
+        $data = [
+            'isi_order' =>$query->getResult(),
+            'order_list' => $order_list,
+            'order_status' => (new order_status())->findAll(),
+        ];
         $data['show_order_content'] = true;
     
         return view('Mitra/viewManajemenOrder', $data);
