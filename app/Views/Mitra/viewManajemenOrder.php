@@ -18,26 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    $grouped_orders = [];
-
-                    foreach($order_list as $order){
-                        $grouping = $order['Nama_Depan'] . '_' . $order['Waktu_Order'] . '_' . $order['Order_Status'];
-                    
-                        if(!isset($grouped_orders[$grouping])){
-                            $grouped_orders[$grouping] = [
-                                'Nama_Depan' => $order['Nama_Depan'],
-                                'Waktu_Order' => $order['Waktu_Order'],
-                                'Order_Status' => $order['Order_Status'],
-                                'ID_User' => $order['ID_User'],
-                                'ID_Order' => []
-                            ];
-                        }
-
-                        $grouped_orders[$grouping]['ID_Order_List'][] = $order['ID_Order'];
-                    }                    
-                    ?>
-                    <?php foreach($grouped_orders as $order): ?>
+                    <?php foreach($order_list as $order): ?>
                         <tr>
                             <td><?= esc($order['Nama_Depan']) ?></td>
                             <td><?= esc($order['Waktu_Order']) ?></td>

@@ -14,6 +14,7 @@ class controllerManajemenOrder extends BaseController{
         $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
+                                     ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
 
         $data = [
@@ -43,6 +44,7 @@ class controllerManajemenOrder extends BaseController{
         $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
+                                     ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
 
         $data = [
@@ -81,6 +83,7 @@ class controllerManajemenOrder extends BaseController{
         $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
+                                     ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
 
         $data = [

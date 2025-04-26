@@ -26,10 +26,10 @@ class controllerRiwayatOrder extends BaseController{
         $orderSelesai = [];
 
         foreach($riwayatPemesanan as $order){
-            if($order['Order_Status'] == 'Diproses'){
-                $orderDiproses[] = $order;
-            }else if($order['Order_Status'] == 'Selesai'){
+            if($order['Order_Status'] == 'Selesai' || $order['Order_Status'] == 'Dibatalkan'){
                 $orderSelesai[] = $order;
+            }else{
+                $orderDiproses[] = $order;
             }
         }
 
@@ -68,10 +68,10 @@ class controllerRiwayatOrder extends BaseController{
         $orderSelesai = [];
 
         foreach($riwayatPemesanan as $order){
-            if($order['Order_Status'] == 'Diproses'){
-                $orderDiproses[] = $order;
-            }else if($order['Order_Status'] == 'Selesai'){
+            if($order['Order_Status'] == 'Selesai' || $order['Order_Status'] == 'Dibatalkan'){
                 $orderSelesai[] = $order;
+            }else{
+                $orderDiproses[] = $order;
             }
         }
 
