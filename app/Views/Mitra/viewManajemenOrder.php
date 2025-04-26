@@ -43,12 +43,12 @@
                             <td><?= esc($order['Waktu_Order']) ?></td>
                             <td><?= esc($order['Order_Status']) ?></td>
                             <td>
-                                <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/orderContent') ?>">
+                                <form class="tombolManajemen" method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/orderContent') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
                                     <button type="submit">Isi Order</button>
                                 </form>
-                                <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>">
+                                <form class="tombolManajemen" method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
                                     <input type="hidden" name="Nama_Depan" value="<?= esc($order['Nama_Depan']) ?>">

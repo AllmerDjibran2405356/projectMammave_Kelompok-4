@@ -33,7 +33,7 @@
 
         <div class="keranjang">
             <h2>Keranjang</h2>
-            <?php if (!empty($keranjang)): ?>
+            <?php if(!empty($keranjang)): ?>
                 <ul>
                     <?php foreach ($keranjang as $id_menu => $jumlah): ?>
                         <li>

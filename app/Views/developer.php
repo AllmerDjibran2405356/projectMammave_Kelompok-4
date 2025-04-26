@@ -15,5 +15,6 @@
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerPemesanan') ?>'">pemesanan</button>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRegisterAkunPelanggan') ?>'">register akun</button>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerLoginAkunPelanggan') ?>'">login akun</button>
+        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRiwayatPemesanan') ?> '">riwayat order</button>
     </body>
 </html>

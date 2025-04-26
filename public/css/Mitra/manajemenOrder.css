@@ -6,3 +6,6 @@
 .updateStatus.active{
     display: block;
 }
+.tombolManajemen{
+    display: inline-block;
+}

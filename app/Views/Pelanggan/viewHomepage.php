@@ -7,10 +7,11 @@
     </head>
     <body>
     <?php $session = session(); ?>
-        <?php if ($session->get('isLoggedIn')): ?>
-        <p>Selamat datang, <?= esc($session->get('Email')) ?>!</p>
+    <?php if($session->get('isLoggedIn')): ?>
+        <p>Selamat datang, <?= esc($session->get('Nama_Depan')) ?>!</p>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerLogoutAkunPelanggan') ?>'">Logout</button>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerPemesanan') ?>'">Pemesanan</button>
+        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRiwayatPemesanan') ?>'">Riwayat Order</button>
     <?php else: ?>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRegisterAkunPelanggan') ?>'">Register Akun</button>
         <button onclick="window.location.href='<?= site_url('Pelanggan/controllerLoginAkunPelanggan') ?>'">Login Akun</button>

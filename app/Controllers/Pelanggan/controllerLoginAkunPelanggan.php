@@ -22,6 +22,7 @@ class controllerLoginAkunPelanggan extends BaseController{
             session()->set('isLoggedIn', true);
             session()->set('Email', $akun['Email']);
             session()->set('ID_User', $akun['ID_User']);
+            session()->set('Nama_Depan', $akun['Nama_Depan']);
             return redirect()->to('Pelanggan/controllerHomepage');
         }else{
             return redirect()->to('Pelanggan/controllerLoginAkunPelanggan')->with('error', 'Cek Email/Password');

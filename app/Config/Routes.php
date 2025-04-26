@@ -37,6 +37,9 @@ $routes->post('/Pelanggan/controllerPemesanan/tambahKeranjang', 'Pelanggan\contr
 $routes->post('/Pelanggan/controllerPemesanan/kurangiKeranjang', 'Pelanggan\controllerPemesanan::kurangiKeranjang');
 $routes->post('/Pelanggan/controllerPemesanan/checkout', 'Pelanggan\controllerPemesanan::checkout');
 
+//riwayat pemesanan
+$routes->get('/Pelanggan/controllerRiwayatPemesanan', 'Pelanggan\controllerRiwayatOrder::viewRiwayatOrder');
+
 //register akun pelanggan
 $routes->get('/Pelanggan/controllerRegisterAkunPelanggan', 'Pelanggan\controllerRegisterAkunPelanggan::viewRegister');
 $routes->post('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun', 'Pelanggan\controllerRegisterAkunPelanggan::registerAkun');

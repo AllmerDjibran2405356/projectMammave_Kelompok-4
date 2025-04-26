@@ -31,13 +31,12 @@ class controllerManajemenOrder extends BaseController{
 
         $orderListModel = new order_list();
 
-        $isi_order = $orderListModel->builder();
-        $isi_order->select('akun_pelanggan.Nama_Depan, order_list.Waktu_Order, menu_list.Nama_Menu, COUNT(order_list.ID_Menu) AS Jumlah')
-                  ->join('akun_pelanggan', 'order_list.ID_User = akun_pelanggan.ID_User')
-                  ->join('menu_list', 'order_list.ID_Menu = menu_list.ID_Menu')
-                  ->where('order_list.ID_User', $id_user)
-                  ->where('order_list.Waktu_Order', $waktu_order)
-                  ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order', 'menu_list.Nama_Menu']);
+        $isi_order = $orderListModel->select('akun_pelanggan.Nama_Depan, order_list.Waktu_Order, menu_list.Nama_Menu, COUNT(order_list.ID_Menu) AS Jumlah')
+                                    ->join('akun_pelanggan', 'order_list.ID_User = akun_pelanggan.ID_User')
+                                    ->join('menu_list', 'order_list.ID_Menu = menu_list.ID_Menu')
+                                    ->where('order_list.ID_User', $id_user)
+                                    ->where('order_list.Waktu_Order', $waktu_order)
+                                    ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order', 'menu_list.Nama_Menu']);
     
         $query = $isi_order->get();
         $data['isi_order'] = $query->getResult();

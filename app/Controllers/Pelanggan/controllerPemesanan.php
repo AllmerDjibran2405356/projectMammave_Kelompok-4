@@ -82,20 +82,20 @@ class controllerPemesanan extends BaseController{
     }
 
     public function kurangiKeranjang(){
-    $session = session();
-    $id_menu = $this->request->getPost('ID_Menu');
+        $session = session();
+        $id_menu = $this->request->getPost('ID_Menu');
 
-    $keranjang = $session->get('keranjang') ?? [];
+        $keranjang = $session->get('keranjang') ?? [];
 
-    if(isset($keranjang[$id_menu])){
-        $keranjang[$id_menu]--;
-        if($keranjang[$id_menu] <= 0){
-            unset($keranjang[$id_menu]);
+        if(isset($keranjang[$id_menu])){
+            $keranjang[$id_menu]--;
+            if($keranjang[$id_menu] <= 0){
+                unset($keranjang[$id_menu]);
+            }
         }
-    }
 
-    $session->set('keranjang', $keranjang);
-    return redirect()->back();
+        $session->set('keranjang', $keranjang);
+        return redirect()->back();
     }
 }
 ?>
