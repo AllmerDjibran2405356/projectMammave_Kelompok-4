@@ -11,14 +11,26 @@ class controllerManajemenOrder extends BaseController{
         $orderListModel = new order_list();
         $orderStatusModel = new order_status();
 
-        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
+        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan, akun_pelanggan.Alamat')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
 
+        $orderDiproses = [];
+        $orderSelesai = [];
+
+        foreach($order_list as $order){
+            if($order['Order_Status'] == 'Selesai' || $order['Order_Status'] == 'Dibatalkan'){
+                $orderSelesai[] = $order;
+            }else{
+                $orderDiproses[] = $order;
+            }
+        }
+        
         $data = [
-            'order_list' => $order_list,
+            'orderDiproses' => $orderDiproses,
+            'orderSelesai' => $orderSelesai,
             'order_status' => $orderStatusModel->findAll(),
             'isi_order' => []
         ];
@@ -41,16 +53,28 @@ class controllerManajemenOrder extends BaseController{
     
         $query = $isi_order->get();
 
-        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
+        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan, akun_pelanggan.Alamat')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
+        
+        $orderDiproses = [];
+        $orderSelesai = [];
 
+        foreach($order_list as $order){
+            if($order['Order_Status'] == 'Selesai' || $order['Order_Status'] == 'Dibatalkan'){
+                $orderSelesai[] = $order;
+            }else{
+                $orderDiproses[] = $order;
+            }
+        }
+        
         $data = [
-            'isi_order' =>$query->getResult(),
-            'order_list' => $order_list,
-            'order_status' => (new order_status())->findAll(),
+            'isi_order' => $query->getResult(),
+            'orderDiproses' => $orderDiproses,
+            'orderSelesai' => $orderSelesai,
+            'order_status' => (new order_status())->findAll()
         ];
         $data['show_order_content'] = true;
     
@@ -80,14 +104,26 @@ class controllerManajemenOrder extends BaseController{
             return redirect()->to(base_url('Mitra/controllerManajemenOrder'));
         }
 
-        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan')
+        $order_list = $orderListModel->select('order_list.*, order_status.Order_Status, akun_pelanggan.Nama_Depan, akun_pelanggan.Alamat')
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
                                      ->findAll();
 
+        $orderDiproses = [];
+        $orderSelesai = [];
+
+        foreach($order_list as $order){
+            if($order['Order_Status'] == 'Selesai' || $order['Order_Status'] == 'Dibatalkan'){
+                $orderSelesai[] = $order;
+            }else{
+                $orderDiproses[] = $order;
+            }
+        }
+
         $data = [
-            'order_list' => $order_list,
+            'orderDiproses' => $orderDiproses,
+            'orderSelesai' => $orderSelesai,
             'order_status' => $orderStatusModel->findAll(),
             'isi_order' => [],
             'selected_user' => $id_user,

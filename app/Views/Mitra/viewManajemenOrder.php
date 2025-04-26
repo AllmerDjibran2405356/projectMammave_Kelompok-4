@@ -9,18 +9,21 @@
         <div class="orderList">
         <h1>List Order</h1>
             <table>
+                <h1>Dalam Proses</h1>
                 <thead>
                     <tr>
                         <th>Nama Pelanggan</th>
+                        <th>Alamat</th>
                         <th>Waktu Order</th>
                         <th>Status Order</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($order_list as $order): ?>
+                    <?php foreach($orderDiproses as $order): ?>
                         <tr>
                             <td><?= esc($order['Nama_Depan']) ?></td>
+                            <td><?= esc($order['Alamat']) ?></td>
                             <td><?= esc($order['Waktu_Order']) ?></td>
                             <td><?= esc($order['Order_Status']) ?></td>
                             <td>
@@ -34,6 +37,34 @@
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
                                     <input type="hidden" name="Nama_Depan" value="<?= esc($order['Nama_Depan']) ?>">
                                     <button type="submit">Update Status</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <table>
+                <h1>Order yang Sudah Selesai</h1>
+                <thead>
+                    <th>Nama Pelanggan</th>
+                    <th>Alamat</th>
+                    <th>Waktu Order</th>
+                    <th>Status Order</th>
+                    <th>Aksi</th>
+                </thead>
+                <tbody>
+                    <?php foreach($orderSelesai as $order): ?>
+                        <tr>
+                            <td><?= esc($order['Nama_Depan']) ?></td>
+                            <td><?= esc($order['Alamat']) ?></td>
+                            <td><?= esc($order['Waktu_Order']) ?></td>
+                            <td><?= esc($order['Order_Status']) ?></td>
+                            <td>
+                                <form class="tombolManajemen" method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/orderContent') ?>">
+                                    <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
+                                    <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
+                                    <button type="submit">Isi Order</button>
                                 </form>
                             </td>
                         </tr>
