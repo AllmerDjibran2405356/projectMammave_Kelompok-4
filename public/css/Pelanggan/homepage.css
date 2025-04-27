@@ -121,7 +121,7 @@
 }
 
 .btn-register:hover, .btn-order:hover{
-  background-color: #e74c3c; /* merah lebih terang saat hover */
+  background-color: #e74c3c;
 }
 
 
@@ -146,8 +146,8 @@
 }
 
 .footer-right{
-  margin-left: auto;
   text-align: right;
+  margin-top: 20px;
 }
 
 .footer-logo{
@@ -171,8 +171,8 @@
 }
 
 .footer-right h4{
-  margin-left: 315px;
-  text-align: start;
+  margin-bottom: 10px;
+  margin-right: 175px;
 }
   
 .footer-social p{
@@ -203,7 +203,12 @@ iframe{
   justify-content: center;
   align-items: center;
 }
-  
+
+.menu-section{
+  display: flex;
+  justify-content: center;
+}
+
 .menu-images{
   display: flex;
   justify-content: center;
@@ -219,7 +224,7 @@ iframe{
 }
 
 .menu-card{
-  width: 200px;
+  width: fit-content;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 16px;
@@ -229,24 +234,30 @@ iframe{
 }
 
 .menu-overlay{
+  position: absolute;
+  top: 40%;
   text-align: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0, 5);
+  border-radius: 15px;
 }
 
 .menu{
   display: inline-block;
-  padding: 20px 60px;
+  padding: 18px 64px;
   font-size: 40px;
   font-family: 'Times New Roman', serif;
   font-weight: bold;
+  background-color: white;
   border: 1px solid #000;
   border-radius: 999px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   text-align: center;
   margin-top: 20px;
 }
 
 .promo{
-  margin-top: 0;
+  margin-top: 8%;
   padding: 40px 20px;
   text-align: center;
 }
@@ -265,7 +276,7 @@ iframe{
 }
 
 .promo-cards img{
-  width: 500px;
+  width: 30%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
