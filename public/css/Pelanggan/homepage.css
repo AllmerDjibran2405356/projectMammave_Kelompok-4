@@ -1,0 +1,272 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left{
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+@font-face{
+  font-family: 'MyFont';
+  src: url('../font/Italianno-Regular.ttf') format('truetype');
+}
+
+.brand-name{
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Myfont', sans-serif;
+}
+
+.navbar-right .nav-link{
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-right .nav-link:hover{
+  color: #e74c3c;
+}
+
+.btn-login{
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 8px 9px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-login:hover{
+  background-color: #c0392b;
+  color: white;
+}
+
+.btn-register{
+  background-color: #c0392b; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-logout{
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 8px 9px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-logout:hover{
+  background-color: #c0392b;
+  color: white;
+}
+
+.btn-order{
+  background-color: #c0392b; 
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-register:hover, .btn-order:hover{
+  background-color: #e74c3c; /* merah lebih terang saat hover */
+}
+
+
+.footer{
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 100px;
+}
+  
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+  
+  
+.footer-left, .footer-right{
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-right{
+  margin-left: auto;
+  text-align: right;
+}
+
+.footer-logo{
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+  
+.footer-title{
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+  
+.footer-social h4{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+
+}
+
+.footer-right h4{
+  margin-left: 315px;
+  text-align: start;
+}
+  
+.footer-social p{
+  margin: 5px 0;
+}
+  
+.map-placeholder{
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  background-color: #ccc;
+  margin-top: 10px;
+ }
+  
+iframe{
+  width: 300px;
+  height: 200px;
+}
+
+.banner{
+  background-image: url('banner.png');
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.menu-images{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.menu-images img{
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+}
+
+.menu-card{
+  width: 200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menu-overlay{
+  text-align: center;
+}
+
+.menu{
+  display: inline-block;
+  padding: 20px 60px;
+  font-size: 40px;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 999px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.promo{
+  margin-top: 0;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.promo h2{
+  text-align: center;
+  font-size: 40px;
+}
+
+.promo-cards{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.promo-cards img{
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

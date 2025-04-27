@@ -50,4 +50,4 @@ $routes->get('/Pelanggan/controllerLoginAkunPelanggan', 'Pelanggan\controllerLog
 $routes->post('/Pelanggan/controllerLoginAkunPelanggan/loginAkun', 'Pelanggan\controllerLoginAkunPelanggan::loginAkun');
 
 //logout akun pelanggan
-$routes->get('Pelanggan/controllerLogoutAkunPelanggan', 'Pelanggan\controllerLogoutAkunPelanggan::logOut');
+$routes->post('Pelanggan/controllerLogoutAkunPelanggan', 'Pelanggan\controllerLogoutAkunPelanggan::logOut');

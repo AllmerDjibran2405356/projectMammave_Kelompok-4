@@ -1,20 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Homepage</title>
-        <script src="<?= base_url('js/Pelanggan/homepage.js') ?>"></script>
-        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/homepage.css') ?>">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="<?= base_url('css/pelanggan/homepage.css') ?>"> 
+        <link rel="stylesheet" href="<?= base_url('css/pelanggan/animasi.css') ?>">
+
     </head>
     <body>
-    <?php $session = session(); ?>
-    <?php if($session->get('isLoggedIn')): ?>
-        <p>Selamat datang, <?= esc($session->get('Nama_Depan')) ?>!</p>
-        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerLogoutAkunPelanggan') ?>'">Logout</button>
-        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerPemesanan') ?>'">Pemesanan</button>
-        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRiwayatPemesanan') ?>'">Riwayat Order</button>
-    <?php else: ?>
-        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerRegisterAkunPelanggan') ?>'">Register Akun</button>
-        <button onclick="window.location.href='<?= site_url('Pelanggan/controllerLoginAkunPelanggan') ?>'">Login Akun</button>
-    <?php endif; ?>
+        <?= view('layout/header') ?>
+
+        <div class="banner"></div>
+
+        <section class="menu-section">
+            <div class="menu-overlay">
+                <h1 class="menu">Menu</h1>
+                <div class="menu-images">
+                    <div class="menu-card">
+                        <img src="<?= base_url('images/gambar 1.png') ?>" alt="Lasagna">
+                        <h3>Lasagna</h3>
+                    </div>
+                    <div class="menu-card">
+                        <img src="<?= base_url('images/gambar 2.png') ?>" alt="Calzone">
+                        <h3>Calzone</h3>
+                    </div>
+                    <div class="menu-card">
+                        <img src="<?= base_url('images/gambar 3.png') ?>" alt="Spaghetti">
+                        <h3>Spaghetti</h3>
+                    </div>    
+                    <div class="menu-card">
+                        <img src="<?= base_url('images/gambar 4.png') ?>" alt="Ravioli">
+                        <h3>Ravioli</h3>
+                    </div>
+                    <div class="menu-card">
+                        <img src="<?= base_url('images/gambar 5.png') ?>" alt="Mac & Cheese">
+                        <h3>Mac & Cheese</h3>
+                    </div>
+
+                </div>
+                <a href="<?= site_url('/Pelanggan/controllerPemesanan') ?>">
+                    <button class="btn-order">Order Sekarang</button>
+                </a>
+            </div>
+        </section>
+
+        <section class="promo">
+            <h2>Get more bites, pay less!</h2>
+            <div class="promo-cards">
+                <img src="<?= base_url('images/poster 1 1.png') ?>" alt="Promo Weekend">
+                <img src="<?= base_url('images/poster 2 1.png') ?>" alt="Promo 50%">
+            </div>
+        </section>
+
+        <section class="divider">
+            <div class="marquee-wrapper">
+                <div class="marquee marquee-left">
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee marquee-left">
+                    <span>-------------------------------------------------------------------------------------------------------</span>
+                    <span>-------------------------------------------------------------------------------------------------------</span>
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee marquee-right">
+                    <span>SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM</span>
+                    <span>SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM</span>
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee marquee-right">
+                    <span>-----------------------------------------------------------------------------------------------------------</span>
+                    <span>-----------------------------------------------------------------------------------------------------------</span>
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee marquee-left">
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                </div>
+            </div>
+        </section>
+
+        <?= view('layout/footer') ?>
     </body>
 </html>
