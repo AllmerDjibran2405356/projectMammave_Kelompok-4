@@ -13,54 +13,42 @@ html{
     padding: 20px 0;
     font-family: 'jaro', sans-serif;    
 }
-  
-.marquee{
-    will-change: transform;
-}
-    
+
 .marquee-wrapper{
     display: flex;
     overflow: hidden;
 }
-    
+
+.marquee{
+    will-change: transform;
+    display: flex;
+    gap: 50px;
+}
+
 .marquee-left{
-    display: flex;
-    animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
 }
-  
+
 .marquee-right{
-    display: flex;
-    animation: scroll-right 10s linear infinite;
+    animation: scroll-right 20s linear infinite;
 }
-    
+
 .marquee span{
     color: rgb(154, 154, 154);
-    font-size: 24px;
-    padding-right: 1px;
     font-size: 60px;
 }
-  
+
 .marquee-left,
 .marquee-right{
-    display: flex;
-    min-width: 200%; /* Penting! biar isi lebih panjang dari layar */
+    min-width: max-content;
 }
-     
+
 @keyframes scroll-left{
-    0%{
-      transform: translateX(0);
-    }
-    100%{
-      transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
-  
-@keyframes scroll-right {
-    0%{
-      transform: translateX(-50%);
-    }
-    100%{
-      transform: translateX(0);
-    }
+
+@keyframes scroll-right{
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
-    

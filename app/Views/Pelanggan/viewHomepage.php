@@ -56,32 +56,27 @@
         <section class="divider">
             <div class="marquee-wrapper">
                 <div class="marquee marquee-left">
-                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
-                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD </span>
                 </div>
             </div>
             <div class="marquee-wrapper">
                 <div class="marquee marquee-left">
-                    <span>-------------------------------------------------------------------------------------------------------</span>
-                    <span>-------------------------------------------------------------------------------------------------------</span>
+                    <span>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
                 </div>
             </div>
             <div class="marquee-wrapper">
                 <div class="marquee marquee-right">
-                    <span>SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM</span>
-                    <span>SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM</span>
+                    <span>SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM LARGE SMALL MEDIUM </span>
                 </div>
             </div>
             <div class="marquee-wrapper">
                 <div class="marquee marquee-right">
-                    <span>-----------------------------------------------------------------------------------------------------------</span>
-                    <span>-----------------------------------------------------------------------------------------------------------</span>
+                    <span>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
                 </div>
             </div>
             <div class="marquee-wrapper">
                 <div class="marquee marquee-left">
-                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
-                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD</span>
+                    <span>ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD ITALIAN FOOD </span>
                 </div>
             </div>
         </section>
