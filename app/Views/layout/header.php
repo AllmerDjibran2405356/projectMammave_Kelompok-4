@@ -5,8 +5,7 @@
             <span class="brand-name">Mammave Italian Kitchen</span>
         </div>
         <div class="navbar-right">
-            <a href="<?= base_url('/') ?>" class="nav-link">Home</a>
-            <a href="<?= base_url('/menu') ?>" class="nav-link">Menu</a>
+            <a href="<?= site_url('Pelanggan/controllerHomepage') ?>" class="nav-link">Home</a>
             <a href="#about-us" class="nav-link">About Us</a>
             
             <?php if (session()->get('isLoggedIn')): ?>

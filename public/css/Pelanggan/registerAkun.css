@@ -2,6 +2,14 @@ html{
   scroll-behavior: smooth;
 }
 
+html, body{
+  margin: 0;
+}
+
+.registerForm{
+  margin-top: 5%;
+}
+
 .form-container{
   max-width: 500px;
   margin: auto;

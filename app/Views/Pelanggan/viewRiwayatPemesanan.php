@@ -4,13 +4,16 @@
         <title>Riwayat Pemesanan</title>
         <script src="<?= base_url('js/Pelanggan/riwayatPemesanan.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/riwayatPemesanan.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/header.css') ?>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body>
+        <?= view('layout/header') ?>
         <?php $session = session(); ?>
         <?php if($session->get('isLoggedIn')): ?>
             <p>Riwayat Pemesanan <?= esc($session->get('Nama_Depan')) ?></p>
         <?php endif; ?>
-        <div>
+        <div class="orderDalamProses">
             <h1>Dalam Proses</h1>
             <table>
                 <thead>
@@ -38,7 +41,7 @@
             </table>
         </div>
 
-        <div>
+        <div class="orderSelesai">
             <h1>Order yang Sudah Selesai</h1>
             <table>
                 <thead>

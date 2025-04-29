@@ -4,15 +4,18 @@
         <title>Register Akun</title>
         <script src="<?= base_url('js/Pelanggan/registerAkun.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/registerAkun.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/header.css') ?>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body>
+        <?= view('layout/header') ?>
         <?php if(session()->getFlashdata('error')): ?>
             <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>
         <?php if(session()->getFlashdata('success')): ?>
             <p style="color: red;"><?= session()->getFlashdata('success') ?></p>
         <?php endif; ?>
-        <form action="<?= site_url('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= site_url('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun') ?>" method="post" enctype="multipart/form-data" class="registerForm">
             <input required type="text" name="Nama_Depan" placeholder="Masukkan Nama Depan">
             <input required type="text" name="Nama_Belakang" placeholder="Masukkan Nama Belakang"><br>
             <input required type="text" name="Nomor_Telepon" placeholder="Masukkan Nomor Hp"><br>
