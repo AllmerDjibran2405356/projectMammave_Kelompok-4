@@ -4,8 +4,14 @@
         <title>Pemesanan</title>
         <script src="<?= base_url('js/Pelanggan/pemesanan.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/pemesanan.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/pelanggan/homepage.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/header.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/footer.css') ?>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body>
+        <?= view('layout/header') ?>
+
         <div class="listMenu">
             <h1>List Menu</h1>
                 <?php if(session()->getFlashdata('success')): ?>

@@ -5,6 +5,8 @@
         <script src="<?= base_url('js/Pelanggan/loginAkun.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/loginAkun.css') ?>">
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/homepage.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/header.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/Pelanggan/footer.css') ?>">
     </head>
     <body>
         <?= view('layout/header') ?>

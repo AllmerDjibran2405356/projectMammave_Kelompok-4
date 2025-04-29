@@ -1,0 +1,162 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+  
+.navbar-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+  
+.nav-logo{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+  
+@font-face{
+    font-family: 'MyFont';
+    src: url('../font/Italianno-Regular.ttf') format('truetype');
+}
+  
+.brand-name{
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Myfont', sans-serif;
+}
+  
+.navbar-right .nav-link{
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+  
+.navbar-right .nav-link:hover{
+    color: #e74c3c;
+}
+  
+.btn-login{
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    padding: 8px 9px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+  
+.btn-login:hover{
+    background-color: #c0392b;
+    color: white;
+}
+  
+.btn-register{
+    background-color: #c0392b; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+  
+.btn-logout{
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    padding: 8px 9px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+  
+.btn-logout:hover{
+    background-color: #c0392b;
+    color: white;
+}
+  
+.btn-order{
+    background-color: #c0392b; 
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.btn-register:hover
+.btn-order:hover{
+    background-color: #e74c3c;
+}
+  
+.dropDown{
+    display: inline-block;
+    margin-left: 10px;
+}
+  
+.btn-drop{
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+  
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 6px;
+    overflow: hidden;
+}
+  
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+  
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
+  
+.dropDown:hover
+.dropdown-content{
+    display: block;
+}
