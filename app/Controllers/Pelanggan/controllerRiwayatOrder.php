@@ -77,8 +77,8 @@ class controllerRiwayatOrder extends BaseController{
 
         $data = [
             'orderDiproses' => $orderDiproses,
-            'orderSelesai' => $orderSelesai,
-            'isi_order' => $query->getResult()
+            'orderSelesai'  => $orderSelesai,
+            'isi_order'     => $query->getResult()
         ];
         $data['show_order_content'] = true;
 

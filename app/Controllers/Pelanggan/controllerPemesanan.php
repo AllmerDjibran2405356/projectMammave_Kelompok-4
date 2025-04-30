@@ -25,9 +25,9 @@ class controllerPemesanan extends BaseController{
         }
 
         $data = [
-            'menu_list' => $menu_list,
-            'menu_kategori' => $kategoriModel->findAll(),
-            'keranjang' => session()->get('keranjang') ?? [],
+            'menu_list'           => $menu_list,
+            'menu_kategori'       => $kategoriModel->findAll(),
+            'keranjang'           => session()->get('keranjang') ?? [],
             'nama_menu_keranjang' => $nama_menu_keranjang
         ];
 
@@ -70,8 +70,8 @@ class controllerPemesanan extends BaseController{
         foreach($keranjang as $id_menu => $jumlah){
             for($i = 0; $i < $jumlah; $i++){
                 $orderModel->insert([
-                    'ID_User' => $id_user,
-                    'ID_Menu' => $id_menu,
+                    'ID_User'     => $id_user,
+                    'ID_Menu'     => $id_menu,
                     'Waktu_Order' => date('Y-m-d H:i:s')
                 ]);
             }

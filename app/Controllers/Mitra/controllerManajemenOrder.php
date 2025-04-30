@@ -30,9 +30,9 @@ class controllerManajemenOrder extends BaseController{
         
         $data = [
             'orderDiproses' => $orderDiproses,
-            'orderSelesai' => $orderSelesai,
-            'order_status' => $orderStatusModel->findAll(),
-            'isi_order' => []
+            'orderSelesai'  => $orderSelesai,
+            'order_status'  => $orderStatusModel->findAll(),
+            'isi_order'     => []
         ];
 
         return view('/Mitra/viewManajemenOrder', $data);
@@ -71,10 +71,10 @@ class controllerManajemenOrder extends BaseController{
         }
         
         $data = [
-            'isi_order' => $query->getResult(),
+            'isi_order'     => $query->getResult(),
             'orderDiproses' => $orderDiproses,
-            'orderSelesai' => $orderSelesai,
-            'order_status' => (new order_status())->findAll()
+            'orderSelesai'  => $orderSelesai,
+            'order_status'  => (new order_status())->findAll()
         ];
         $data['show_order_content'] = true;
     
@@ -122,14 +122,14 @@ class controllerManajemenOrder extends BaseController{
         }
 
         $data = [
-            'orderDiproses' => $orderDiproses,
-            'orderSelesai' => $orderSelesai,
-            'order_status' => $orderStatusModel->findAll(),
-            'isi_order' => [],
-            'selected_user' => $id_user,
+            'orderDiproses'        => $orderDiproses,
+            'orderSelesai'         => $orderSelesai,
+            'order_status'         => $orderStatusModel->findAll(),
+            'isi_order'            => [],
+            'selected_user'        => $id_user,
             'selected_waktu_order' => $waktu_order,
-            'selected_nama' => $nama_depan,
-            'show_update_status' => true
+            'selected_nama'        => $nama_depan,
+            'show_update_status'   => true
         ];
 
         return view('Mitra/viewManajemenOrder', $data);

@@ -16,7 +16,7 @@ class controllerManajemenMenu extends BaseController{
                                ->findAll();
 
         $data = [
-            'menu_list' => $menu_list,
+            'menu_list'     => $menu_list,
             'menu_kategori' => $kategoriModel->findAll()
         ];
 
@@ -78,9 +78,9 @@ class controllerManajemenMenu extends BaseController{
         $idMenu = $this->request->getPost('ID_Menu');
 
         $data = [
-            'Nama_Menu' => $this->request->getPost('Nama_Menu'),
-            'ID_Kategori' => $this->request->getPost('ID_Kategori'),
-            'Harga' => $this->request->getPost('Harga'),
+            'Nama_Menu'      => $this->request->getPost('Nama_Menu'),
+            'ID_Kategori'    => $this->request->getPost('ID_Kategori'),
+            'Harga'          => $this->request->getPost('Harga'),
             'Deskripsi_Menu' => $this->request->getPost('Deskripsi_Menu')
         ];
 
