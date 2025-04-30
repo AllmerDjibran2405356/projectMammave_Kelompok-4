@@ -1,0 +1,54 @@
+@font-face{
+    font-family: 'jaro';
+    src: url('../font/Jaro-Regular.ttf') format('truetype');
+}
+  
+html{
+    scroll-behavior: smooth;
+}
+    
+.divider{
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    font-family: 'jaro', sans-serif;    
+}
+
+.marquee-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
+.marquee{
+    will-change: transform;
+    display: flex;
+    gap: 50px;
+}
+
+.marquee-left{
+    animation: scroll-left 20s linear infinite;
+}
+
+.marquee-right{
+    animation: scroll-right 20s linear infinite;
+}
+
+.marquee span{
+    color: rgb(154, 154, 154);
+    font-size: 60px;
+}
+
+.marquee-left,
+.marquee-right{
+    min-width: max-content;
+}
+
+@keyframes scroll-left{
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right{
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}

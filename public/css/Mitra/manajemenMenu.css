@@ -1,0 +1,28 @@
+.menuList{
+    display: block;
+}
+.editMenu{
+    display: none;
+}
+.addMenu{
+    display: none;
+}
+.kategori{
+    display: none;
+}
+.manageMenu{
+    display: none;
+}
+.manageKategori{
+    display: none;
+}
+.tombolAksi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+img{
+    width: 500px;
+    height: auto;
+}
