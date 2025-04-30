@@ -37,6 +37,9 @@ $routes->post('/Mitra/controllerLoginAdmin/loginAkunAdmin', 'Mitra\controllerLog
 //routes logout admin
 $routes->post('/Mitra/controllerLogoutAdmin', 'Mitra\controllerLogoutAdmin::logOut');
 
+//routes untuk manajemen akun admin
+$routes->get('/Mitra/controllerManajemenUserAdmin', 'Mitra\controllerManajemenUserAdmin::viewManajemenUserAdmin');
+
 //routes pelanggan
 
 //homepage publik
