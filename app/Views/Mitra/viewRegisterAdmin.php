@@ -4,6 +4,7 @@
         <title>Register Akun Admin</title>
     </head>
     <body>
+        <button onclick="window.location.href='<?= base_url('Mitra/viewHomepageManajemen') ?>'">back</button>
         <?php if(session()->getFlashdata('error')): ?>
             <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>

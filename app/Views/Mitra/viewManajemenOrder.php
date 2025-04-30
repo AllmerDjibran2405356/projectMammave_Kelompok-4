@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="<?= base_url('css/Mitra/manajemenOrder.css') ?>">
     </head>
     <body>
+        <button onclick="window.location.href='<?= base_url('Mitra/viewHomepageManajemen') ?>'">back</button>
         <div class="orderList">
         <h1>List Order</h1>
             <table>

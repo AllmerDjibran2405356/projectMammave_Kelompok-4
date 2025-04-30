@@ -5,7 +5,6 @@
         <script src="<?= base_url('js/Pelanggan/registerAkun.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/registerAkun.css') ?>">
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/header.css') ?>">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body>
         <?= view('layout/header') ?>
