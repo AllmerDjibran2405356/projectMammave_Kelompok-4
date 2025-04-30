@@ -1,35 +1,35 @@
 body{
-    font-family: Arial, sans-serif;
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  html{
-    scroll-behavior: smooth;
-  }
+html{
+  scroll-behavior: smooth;
+}
 
 .login-container{
-    max-width: 500px;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 380px;
-  }
+  max-width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 380px;
+}
 
-  h1{
-    text-align: center;
-    margin-top: 120px;
-    margin-bottom: 20px;
-  }
-  form{
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+h1{
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 20px;
+}
+form{
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .password-wrapper{
   position: relative;
@@ -39,12 +39,12 @@ body{
 }
 
 .password-wrapper input, input[type="email"]{
-    width: 100%;
-    padding: 12px 40px 12px 12px; 
-    font-size: 16px;
-    border: 1px solid #888;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 40px 12px 12px; 
+  font-size: 16px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .toggle-password{

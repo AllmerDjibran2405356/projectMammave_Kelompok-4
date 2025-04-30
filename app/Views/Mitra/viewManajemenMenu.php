@@ -29,7 +29,7 @@
                         <td><?= esc($menu['Harga']) ?></td>
                         <td><?= esc($menu['Deskripsi_Menu']) ?></td>
                         <td><img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>"></td>
-                        <td>
+                        <td class="tombolAksi">
                             <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
                             <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus menu ini?')">
                                 <button type="submit">Delete</button>

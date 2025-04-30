@@ -16,15 +16,17 @@
             <p style="color: red;"><?= session()->getFlashdata('success') ?></p>
         <?php endif; ?>
         <form action="<?= site_url('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun') ?>" method="post" enctype="multipart/form-data" class="registerForm">
-            <input required type="text" name="Nama_Depan" placeholder="Masukkan Nama Depan">
-            <input required type="text" name="Nama_Belakang" placeholder="Masukkan Nama Belakang"><br>
+            <div class="Name">
+                <input required type="text" name="Nama_Depan" placeholder="Masukkan Nama Depan">
+                <input required type="text" name="Nama_Belakang" placeholder="Masukkan Nama Belakang"><br>
+            </div>
             <input required type="text" name="Nomor_Telepon" placeholder="Masukkan Nomor Hp"><br>
             <textarea required name="Alamat" placeholder="Masukkan Alamat" oninput="autoresize(this)"></textarea><br>
             <input required type="text" name="Email" placeholder="Masukkan Email"><br>
             <input required type="password" name="Password_User" placeholder="Masukkan Password"><br>
             <input required type="password" name="Password_Confirm" placeholder="Masukkan Ulang password"><br>
             <input type="date" name="Tanggal_Lahir" placeholder="Masukkan Tanggal Lahir (optional)"><br>
-            <button>Sign Up</button>
+            <button class="btn-signup">Sign Up</button>
         </form>
     </body>
 </html>
