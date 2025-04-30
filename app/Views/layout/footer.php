@@ -1,7 +1,7 @@
 <footer class="footer" id="about-us">
   <div class="footer-container">
     <div class="footer-left">
-      <img src="<?= base_url('images/logo.jpg') ?>" alt="Logo" class="footer-logo">
+      <img src="<?= base_url('images/homepage/logo.jpg') ?>" alt="Logo" class="footer-logo">
       <h3 class="footer-title cursive">Mammave Italian Kitchen</h3>
 
       <div class="footer-social">

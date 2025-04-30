@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-container">
         <div class="navbar-left">
-            <img src="<?= base_url('images/logo.jpg') ?>" alt="Logo" class="nav-logo">
+            <img src="<?= base_url('images/homepage/logo.jpg') ?>" alt="Logo" class="nav-logo">
             <span class="brand-name">Mammave Italian Kitchen</span>
         </div>
         <div class="navbar-right">

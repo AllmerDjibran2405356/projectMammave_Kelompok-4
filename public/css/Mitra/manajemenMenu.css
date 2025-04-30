@@ -16,3 +16,8 @@
 .manageKategori{
     display: none;
 }
+
+img{
+    width: 50%;
+    height: auto;
+}

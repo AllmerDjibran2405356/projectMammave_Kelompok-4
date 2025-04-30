@@ -29,7 +29,8 @@ class controllerManajemenMenu extends BaseController{
         $menuModel->save([
             'Nama_Menu' => $this->request->getPost('Nama_Menu'),
             'ID_Kategori' => $this->request->getPost('ID_Kategori'),
-            'Harga' => $this->request->getPost('Harga')
+            'Harga' => $this->request->getPost('Harga'),
+            'Deksripsi_Menu' => $this->request->getPost('Deskripsi_Menu')
         ]);
 
         return redirect()->to('/Mitra/controllerManajemenMenu');
@@ -53,15 +54,42 @@ class controllerManajemenMenu extends BaseController{
 
     public function editMenu(){
         $menuModel = new menu_list();
+        $idMenu = $this->request->getPost('ID_Menu');
 
-        $menuModel->update($this->request->getPost('ID_Menu'), [
-            'Nama_Menu'   => $this->request->getPost('Nama_Menu'),
+        $data = [
+            'Nama_Menu' => $this->request->getPost('Nama_Menu'),
             'ID_Kategori' => $this->request->getPost('ID_Kategori'),
-            'Harga'       => $this->request->getPost('Harga')
-        ]);
-        return redirect()->to('/Mitra/controllerManajemenMenu');
-    }
+            'Harga' => $this->request->getPost('Harga'),
+            'Deskripsi_Menu' => $this->request->getPost('Deskripsi_Menu')
+        ];
 
+        $file = $this->request->getFile('Gambar');
+        $namaGambarLama = $this->request->getPost('Nama_Gambar');
+
+        if($file && $file->isValid() && !$file->hasMoved()){
+            $allowedExtensions = ['jpg', 'jpeg', 'png'];
+            $ext = $file->getClientExtension();
+
+            if(!in_array(strtolower($ext), $allowedExtensions)){
+                return redirect()->back()->with('error', 'Format gambar tidak didukung. Hanya JPG, JPEG, dan PNG yang diperbolehkan');
+            }
+
+            if($file->getSize() > 2 * 1024 * 1024){
+                return redirect()->back()->with('error', 'Ukuran file terlalu besar. maksimal 2MB');
+            }
+
+            
+            $newName = $file->getRandomName();
+            $file->move(FCPATH . 'images/menu/', $newName);
+            $data['Nama_Gambar'] = $newName;
+        }else{
+            $data['Nama_Gambar'] = $namaGambarLama;
+        }
+
+        $menuModel->update($idMenu, $data);
+
+        return redirect()->to('/Mitra/controllerManajemenMenu')->with('success', 'Menu Berhasil Diperbarui');
+    }
 
     public function deleteKategori($id){
         $kategoriModel = new menu_kategori();

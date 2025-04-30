@@ -23,6 +23,8 @@ function openEditMenu(menu){
     document.getElementById("edit-Nama_Menu").value = menu.Nama_Menu;
     document.getElementById("edit-ID_Kategori").value = menu.ID_Kategori;
     document.getElementById("edit-Harga").value = menu.Harga;
+    document.getElementById("edit-Deskripsi_Menu").value = menu.Deskripsi_Menu;
+    document.getElementById("edit-Nama_Gambar").value = menu.Nama_Gambar;
 }
 function closeEditMenu(){
     document.querySelector(".editMenu").style.display = "none";

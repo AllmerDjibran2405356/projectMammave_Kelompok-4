@@ -20,23 +20,23 @@
                 <h1 class="menu">Menu</h1>
                 <div class="menu-images">
                     <div class="menu-card">
-                        <img src="<?= base_url('images/gambar 1.png') ?>" alt="Lasagna">
+                        <img src="<?= base_url('images/homepage/gambar 1.png') ?>" alt="Lasagna">
                         <h3>Lasagna</h3>
                     </div>
                     <div class="menu-card">
-                        <img src="<?= base_url('images/gambar 2.png') ?>" alt="Calzone">
+                        <img src="<?= base_url('images/homepage/gambar 2.png') ?>" alt="Calzone">
                         <h3>Calzone</h3>
                     </div>
                     <div class="menu-card">
-                        <img src="<?= base_url('images/gambar 3.png') ?>" alt="Spaghetti">
+                        <img src="<?= base_url('images/homepage/gambar 3.png') ?>" alt="Spaghetti">
                         <h3>Spaghetti</h3>
                     </div>    
                     <div class="menu-card">
-                        <img src="<?= base_url('images/gambar 4.png') ?>" alt="Ravioli">
+                        <img src="<?= base_url('images/homepage/gambar 4.png') ?>" alt="Ravioli">
                         <h3>Ravioli</h3>
                     </div>
                     <div class="menu-card">
-                        <img src="<?= base_url('images/gambar 5.png') ?>" alt="Mac & Cheese">
+                        <img src="<?= base_url('images/homepage/gambar 5.png') ?>" alt="Mac & Cheese">
                         <h3>Mac & Cheese</h3>
                     </div>
 
@@ -50,8 +50,8 @@
         <section class="promo">
             <h2>Get more bites, pay less!</h2>
             <div class="promo-cards">
-                <img src="<?= base_url('images/poster 1 1.png') ?>" alt="Promo Weekend">
-                <img src="<?= base_url('images/poster 2 1.png') ?>" alt="Promo 50%">
+                <img src="<?= base_url('images/homepage/poster 1 1.png') ?>" alt="Promo Weekend">
+                <img src="<?= base_url('images/homepage/poster 2 1.png') ?>" alt="Promo 50%">
             </div>
         </section>
 

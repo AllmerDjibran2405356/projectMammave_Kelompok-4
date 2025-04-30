@@ -23,6 +23,12 @@
                         <td><?= esc($menu['Nama_Menu']) ?></td>
                         <td><?= esc($menu['Nama_Kategori']) ?></td>
                         <td><?= esc($menu['Harga']) ?></td>
+                        <td><?= esc($menu['Deskripsi_Menu']) ?></td>
+                        <td>
+                            <?php if(!empty($menu['Nama_Gambar']) && file_exists(FCPATH . 'images/menu/' . ($menu['Nama_Gambar']))): ?>
+                            <img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>">
+                            <?php endif; ?>
+                        </td>
                         <td>
                             <form action="<?= site_url('/Pelanggan/controllerPemesanan/tambahKeranjang') ?>" method="post">
                             <input type="hidden" name="ID_Menu" value="<?= esc($menu['ID_Menu']) ?>">
