@@ -31,7 +31,9 @@
                         <td><img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>"></td>
                         <td>
                             <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
-                            <button href="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>">Hapus</button>
+                            <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus menu ini?')">
+                                <button type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -98,13 +100,17 @@
 
         <div class="addMenu">
         <h1>Tambahkan Menu Baru</h1><button onclick="closeTambahMenu()">x</button><br>
-            <form action="<?= site_url('Mitra/controllerManajemenMenu/addMenu') ?>" method="post">
+            <form action="<?= site_url('Mitra/controllerManajemenMenu/addMenu') ?>" method="post" enctype="multipart/form-data">
                 <strong>Nama Menu</strong><br>
                 <input required type="text" name="Nama_Menu"><br>
                 <strong>ID Kategori</strong><br>
                 <input required type="number" name="ID_Kategori"><br>
                 <strong>Harga</strong><br>
                 <input required type="number" name="Harga"><br>
+                <strong>Deskripsi Menu</strong><br>
+                <input required type="text" name="Deskripsi_Menu" maxlength="255"><br>
+                <strong>Gambar Menu</strong><br>
+                <input type="file" id="myFile" name="Gambar"><br>
                 <button type="submit">Tambah Menu</button>
             </form>
         </div>

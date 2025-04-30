@@ -26,11 +26,21 @@ class controllerManajemenMenu extends BaseController{
     public function addMenu(){
         $menuModel = new menu_list();
 
+        $file = $this->request->getFile('Gambar');
+
+        $namaFile = null;
+
+        if($file && $file->isValid() && !$file->hasMoved()){
+            $namaFile = $file->getRandomName();
+            $file->move(FCPATH . 'images/menu', $namaFile);
+        }
+
         $menuModel->save([
-            'Nama_Menu' => $this->request->getPost('Nama_Menu'),
-            'ID_Kategori' => $this->request->getPost('ID_Kategori'),
-            'Harga' => $this->request->getPost('Harga'),
-            'Deksripsi_Menu' => $this->request->getPost('Deskripsi_Menu')
+            'Nama_Menu'      => $this->request->getPost('Nama_Menu'),
+            'ID_Kategori'    => $this->request->getPost('ID_Kategori'),
+            'Harga'          => $this->request->getPost('Harga'),
+            'Deksripsi_Menu' => $this->request->getPost('Deskripsi_Menu'),
+            'Nama_Gambar'    => $namaFile
         ]);
 
         return redirect()->to('/Mitra/controllerManajemenMenu');
@@ -48,8 +58,19 @@ class controllerManajemenMenu extends BaseController{
 
     public function deleteMenu($id){
         $menuModel = new menu_list();
+        
+        $menu = $menuModel->find($id);
+        
+        if(!empty($menu['Nama_Gambar'])){
+            $gambarPath = FCPATH . 'images/menu/' . $menu['Nama_Gambar'];
+            if(file_exists($gambarPath)){
+                unlink($gambarPath);
+            }
+        }
+
         $menuModel->delete($id);
-        return redirect()->to('/Mitra/controllerManajemenMenu');
+
+        return redirect()->to('/Mitra/controllerManajemenMenu')->with('success', 'Menu berhasil dihapus');
     }
 
     public function editMenu(){

@@ -17,7 +17,7 @@ $routes->get('/Mitra/viewHomepageManajemen', 'Mitra\controllerHomepageManajemen:
 $routes->get('/Mitra/controllerManajemenMenu', 'Mitra\controllerManajemenMenu::viewManajemenMenu');
 $routes->post('/Mitra/controllerManajemenMenu/addMenu', 'Mitra\controllerManajemenMenu::addMenu');
 $routes->post('/Mitra/controllerManajemenMenu/addKategori', 'Mitra\controllerManajemenMenu::addKategori');
-$routes->get('/Mitra/controllerManajemenMenu/deleteMenu/(:num)', 'Mitra\controllerManajemenMenu::deleteMenu/$1');
+$routes->post('/Mitra/controllerManajemenMenu/deleteMenu/(:num)', 'Mitra\controllerManajemenMenu::deleteMenu/$1');
 $routes->post('/Mitra/controllerManajemenMenu/editMenu', 'Mitra\controllerManajemenMenu::editMenu');
 $routes->get('/Mitra/controllerManajemenMenu/deleteKategori/(:num)', 'Mitra\controllerManajemenMenu::deleteKategori/$1');
 
