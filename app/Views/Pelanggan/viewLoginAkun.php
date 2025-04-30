@@ -12,7 +12,7 @@
         <?= view('layout/header') ?>
 
         <?php if(session()->getFlashdata('error')): ?>
-        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>
         
         <div class="login-container">

@@ -26,6 +26,14 @@ $routes->get('/Mitra/controllerManajemenOrder', 'Mitra\controllerManajemenOrder:
 $routes->post('/Mitra/controllerManajemenOrder/orderContent', 'Mitra\controllerManajemenOrder::orderContent');
 $routes->post('/Mitra/controllerManajemenOrder/updateStatus', 'Mitra\controllerManajemenOrder::updateStatus');
 
+//routes register admin
+
+//routes login admin
+$routes->get('/Mitra/controllerLoginAdmin', 'Mitra\controllerLoginAdmin::viewLoginAdmin');
+$routes->post('/Mitra/controllerLoginAdmin/loginAkunAdmin', 'Mitra\controllerLoginAdmin::loginAkunAdmin');
+
+//routes logout admin
+
 //routes pelanggan
 
 //homepage publik
