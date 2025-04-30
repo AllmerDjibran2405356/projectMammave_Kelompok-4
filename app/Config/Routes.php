@@ -39,11 +39,13 @@ $routes->post('/Mitra/controllerLogoutAdmin', 'Mitra\controllerLogoutAdmin::logO
 
 //routes untuk manajemen akun admin
 $routes->get('/Mitra/controllerManajemenUserAdmin', 'Mitra\controllerManajemenUserAdmin::viewManajemenUserAdmin');
+$routes->post('/Mitra/controllerManajemenUserAdmin/deleteAkun/(:num)', 'Mitra\controllerManajemenUserAdmin::deleteAkun/$1');
 
 //routes pelanggan
 
 //homepage publik
 $routes->get('/Pelanggan/controllerHomepage', 'Pelanggan\controllerHomepage::viewHomepage');
+
 
 //pemesanan
 $routes->get('/Pelanggan/controllerPemesanan', 'Pelanggan\controllerPemesanan::viewPemesanan');

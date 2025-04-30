@@ -17,8 +17,9 @@
                     <tr>
                         <td><?= esc($user['Username']) ?></td>
                         <td>
-                            <button>edit</button>
-                            <button>delete</button>
+                            <form action="<?= base_url('/Mitra/controllerManajemenUserAdmin/deleteAkun/' . $user['ID_Admin']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus admin ini?')">
+                                <button type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
