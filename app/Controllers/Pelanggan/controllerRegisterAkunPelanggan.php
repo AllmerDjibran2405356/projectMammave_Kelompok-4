@@ -20,6 +20,10 @@ class controllerRegisterAkunPelanggan extends BaseController{
             return redirect()->back()->with('error', 'Email atau nomor telepon sudah terdaftar');
         }
 
+        if ($this->request->getPost('Password_User') !== $this->request->getPost('Password_Confirm')) {
+            return redirect()->back()->with('error', 'Password tidak sama');
+        }
+
         $data = [
             'Nama_Depan'    => esc($this->request->getPost('Nama_Depan')),
             'Nama_Belakang' => esc($this->request->getPost('Nama_Belakang')),
@@ -28,11 +32,7 @@ class controllerRegisterAkunPelanggan extends BaseController{
             'Nomor_Telepon' => esc($this->request->getPost('Nomor_Telepon')),
             'Email'         => esc($this->request->getPost('Email')),
             'Password_User' => esc(password_hash($this->request->getPost('Password_User'), PASSWORD_DEFAULT))
-        ];     
-
-        if ($this->request->getPost('Password_User') !== $this->request->getPost('Password_Confirm')) {
-            return redirect()->back()->with('error', 'Password Tidak Sama');
-        }
+        ];
 
         if($model->insert($data)){
             return redirect()->to('Pelanggan/controllerLoginAkunPelanggan')->with('success', 'Akun berhasil dibuat');

@@ -14,8 +14,8 @@
             <h1>Login Admin</h1>
             <form action="<?= site_url('/Mitra/controllerLoginAdmin/loginAkunAdmin') ?>" method="post" enctype="multipart/form-data">
                 <div>
-                    <input required type="text" placeholder="username">
-                    <input required type="password" placeholder="password">
+                    <input required type="text" name="Username" placeholder="username">
+                    <input required type="password" name="Password_Admin" placeholder="password">
                 </div>
                 <button type="submit" class="btn-login">Masuk</button>
             </form>

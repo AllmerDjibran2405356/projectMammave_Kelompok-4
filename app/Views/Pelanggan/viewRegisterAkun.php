@@ -13,9 +13,9 @@
             <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>
         <?php if(session()->getFlashdata('success')): ?>
-            <p style="color: red;"><?= session()->getFlashdata('success') ?></p>
+            <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
         <?php endif; ?>
-        <form action="<?= site_url('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun') ?>" method="post" enctype="multipart/form-data" class="registerForm">
+        <form action="<?= site_url('Pelanggan/controllerRegisterAkunPelanggan/registerAkun') ?>" method="post" enctype="multipart/form-data" class="registerForm">
             <div class="Name">
                 <input required type="text" name="Nama_Depan" placeholder="Masukkan Nama Depan">
                 <input required type="text" name="Nama_Belakang" placeholder="Masukkan Nama Belakang"><br>
