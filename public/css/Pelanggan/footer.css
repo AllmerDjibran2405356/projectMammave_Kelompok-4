@@ -12,7 +12,6 @@
     align-items: flex-start;
 }
     
-    
 .footer-left, .footer-right{
     flex: 1;
     min-width: 280px;

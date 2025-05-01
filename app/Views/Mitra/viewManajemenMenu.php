@@ -115,7 +115,14 @@
                 <strong>Nama Menu</strong><br>
                 <input required type="text" name="Nama_Menu"><br>
                 <strong>ID Kategori</strong><br>
-                <input required type="number" name="ID_Kategori"><br>
+                <select required name="ID_Kategori" id="edit-ID_Kategori">
+                    <option value="">Pilih Kategori</option>
+                    <?php foreach($menu_kategori as $kategori): ?>
+                        <option value="<?= esc($kategori['ID_Kategori']) ?>" <?= ($menu['ID_Kategori'] == $kategori['ID_Kategori']) ? 'selected' : '' ?>>
+                            <?= esc($kategori['Nama_Kategori']) ?>
+                        </option>
+                    <?php endforeach ?>
+                </select><br>
                 <strong>Harga</strong><br>
                 <input required type="number" name="Harga"><br>
                 <strong>Deskripsi Menu</strong><br>
