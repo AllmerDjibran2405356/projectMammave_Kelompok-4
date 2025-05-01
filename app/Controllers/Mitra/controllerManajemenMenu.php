@@ -13,6 +13,7 @@ class controllerManajemenMenu extends BaseController{
 
         $menu_list = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
                                ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
+                               ->where('menu_list.Menu_Status', 'active')
                                ->findAll();
 
         $data = [
@@ -58,17 +59,10 @@ class controllerManajemenMenu extends BaseController{
 
     public function deleteMenu($id){
         $menuModel = new menu_list();
-        
-        $menu = $menuModel->find($id);
-        
-        if(!empty($menu['Nama_Gambar'])){
-            $gambarPath = FCPATH . 'images/menu/' . $menu['Nama_Gambar'];
-            if(file_exists($gambarPath)){
-                unlink($gambarPath);
-            }
-        }
 
-        $menuModel->delete($id);
+        $new_menu_status = $this->request->getPost('deleteMenu');
+
+        $menuModel->update($id, ['Menu_Status' => $new_menu_status]);
 
         return redirect()->to('/Mitra/controllerManajemenMenu')->with('success', 'Menu berhasil dihapus');
     }

@@ -33,6 +33,7 @@
                         <td class="tombolAksi">
                             <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
                             <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus menu ini?')">
+                                <input type="hidden" name="deleteMenu" value="deleted">
                                 <button type="submit">Delete</button>
                             </form>
                         </td>
