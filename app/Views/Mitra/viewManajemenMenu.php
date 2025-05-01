@@ -58,7 +58,16 @@
                     </tr>
                     <tr>
                         <td><input required type="text" name="Nama_Menu" id="edit-Nama_Menu"></td>
-                        <td><input required type="number" name="ID_Kategori" id="edit-ID_Kategori"></td>
+                        <td>
+                            <select required name="ID_Kategori" id="edit-ID_Kategori">
+                                <option value="">Pilih Kategori</option>
+                                <?php foreach($menu_kategori as $kategori): ?>
+                                    <option value="<?= esc($kategori['ID_Kategori']) ?>" <?= ($menu['ID_Kategori'] == $kategori['ID_Kategori']) ? 'selected' : '' ?>>
+                                        <?= esc($kategori['Nama_Kategori']) ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
                         <td><input required type="number" name="Harga" id="edit-Harga"></td>
                         <td><input required type="text" name="Deskripsi_Menu" maxlength="255" id="edit-Deskripsi_Menu"></td>
                         <td><input type="file" id="myFile" name="Gambar"></td>

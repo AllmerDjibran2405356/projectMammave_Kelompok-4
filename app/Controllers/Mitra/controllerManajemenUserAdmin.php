@@ -6,6 +6,9 @@ use App\Models\Mitra\list_akun_mitra;
 
 class controllerManajemenUserAdmin extends BaseController{
     public function viewManajemenUserAdmin(){
+        if(!session()->get('isLoggedInAdmin')){
+            return redirect()->to('Mitra/controllerLoginAdmin')->with('error', 'Harap login terlebih dahulu');
+        }
         $modelListAkun = new list_akun_mitra();
 
         $data = [

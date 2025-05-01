@@ -1,6 +1,14 @@
 .menuList{
     display: block;
 }
+.menuList img{
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 .editMenu{
     display: none;
 }

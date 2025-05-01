@@ -8,6 +8,9 @@ use App\Models\Database\order_status;
 
 class controllerManajemenOrder extends BaseController{
     public function viewManajemenOrder(){
+        if(!session()->get('isLoggedInAdmin')){
+            return redirect()->to('Mitra/controllerLoginAdmin')->with('error', 'Harap login terlebih dahulu');
+        }
         $orderListModel = new order_list();
         $orderStatusModel = new order_status();
 

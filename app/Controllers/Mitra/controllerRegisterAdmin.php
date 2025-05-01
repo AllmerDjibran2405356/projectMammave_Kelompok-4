@@ -7,6 +7,9 @@ use App\Models\Mitra\akun_mitra_register;
 
 class controllerRegisterAdmin extends BaseController{
     public function viewRegisterAdmin(){
+        if(!session()->get('isLoggedInAdmin')){
+            return redirect()->to('Mitra/controllerLoginAdmin')->with('error', 'Harap login terlebih dahulu');
+        }
         return view('Mitra/viewRegisterAdmin');
     }
 

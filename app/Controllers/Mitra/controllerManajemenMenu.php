@@ -8,6 +8,9 @@ use App\Models\Database\menu_kategori;
 
 class controllerManajemenMenu extends BaseController{
     public function viewManajemenMenu(){
+        if(!session()->get('isLoggedInAdmin')){
+            return redirect()->to('Mitra/controllerLoginAdmin')->with('error', 'Harap login terlebih dahulu');
+        }
         $menuModel = new menu_list();
         $kategoriModel = new menu_kategori();
 
@@ -75,7 +78,7 @@ class controllerManajemenMenu extends BaseController{
             'Nama_Menu'      => $this->request->getPost('Nama_Menu'),
             'ID_Kategori'    => $this->request->getPost('ID_Kategori'),
             'Harga'          => $this->request->getPost('Harga'),
-            'Deskripsi_Menu' => $this->request->getPost('Deskripsi_Menu')
+            'Deskripsi_Menu' => $this->request->getPost('Deskripsi_Menu'),
         ];
 
         $file = $this->request->getFile('Gambar');
