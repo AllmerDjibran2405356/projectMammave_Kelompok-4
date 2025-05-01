@@ -17,6 +17,7 @@ class controllerManajemenMenu extends BaseController{
         $menu_list = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
                                ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
                                ->where('menu_list.Menu_Status', 'active')
+                               ->orderBy('menu_list.ID_Kategori')
                                ->findAll();
 
         $data = [

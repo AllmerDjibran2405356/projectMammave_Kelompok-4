@@ -14,17 +14,22 @@
 
         <h1 class="judulListMenu">List Menu</h1>
         <div class="listMenu">
-            <?php if(session()->getFlashdata('success')): ?>
-                <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
-            <?php endif; ?>
-            <?php foreach($menu_list as $menu): ?>
+    <?php if(session()->getFlashdata('success')): ?>
+        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+    <?php endif; ?>
+
+    <?php foreach($menu_list as $kategori => $menus): ?>
+        <h2><?= esc($kategori) ?></h2>
+        <div class="menuRow">
+            <?php foreach($menus as $menu): ?>
                 <div class="menuItem">
-                    <?php if(!empty($menu['Nama_Gambar']) && file_exists(FCPATH . 'images/menu/' . ($menu['Nama_Gambar']))): ?>
-                        <img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>"><br>
+                    <?php if (!empty($menu['Nama_Gambar']) && file_exists(FCPATH . 'images/menu/' . $menu['Nama_Gambar'])): ?>
+                        <img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>" alt="<?= esc($menu['Nama_Menu']) ?>">
                     <?php endif; ?>
-                    <?= esc($menu['Nama_Menu']) ?><br>
-                    <?= esc($menu['Deskripsi_Menu']) ?><br>
-                    <?= esc($menu['Harga']) ?>
+                    <div><strong><?= esc($menu['Nama_Menu']) ?></strong></div>
+                    <div><?= esc($menu['Deskripsi_Menu']) ?></div>
+                    <div>Rp <?= number_format($menu['Harga'], 0, ',', '.') ?></div>
+
                     <form action="<?= site_url('/Pelanggan/controllerPemesanan/tambahKeranjang') ?>" method="post">
                         <input type="hidden" name="ID_Menu" value="<?= esc($menu['ID_Menu']) ?>">
                         <div class="jumlahItem">
@@ -35,8 +40,10 @@
                         <button type="submit">Tambah ke Keranjang</button>
                     </form>
                 </div>
-            <?php endforeach ?>
+            <?php endforeach; ?>
         </div>
+    <?php endforeach; ?>
+</div>
 
         <div class="keranjang">
             <h2>Keranjang</h2>
@@ -44,7 +51,7 @@
                 <ul>
                     <?php foreach ($keranjang as $id_menu => $jumlah): ?>
                         <li>
-                            ID Menu: <?= esc($nama_menu_keranjang[$id_menu]) ?> | Jumlah: <?= esc($jumlah) ?>
+                            <?= esc($nama_menu_keranjang[$id_menu]) ?> | Jumlah: <?= esc($jumlah) ?>
                             <form action="<?= site_url('/Pelanggan/controllerPemesanan/kurangiKeranjang') ?>" method="post" style="display:inline;">
                                 <input type="hidden" name="ID_Menu" value="<?= esc($id_menu) ?>">
                                 <button type="submit">Kurangi</button>

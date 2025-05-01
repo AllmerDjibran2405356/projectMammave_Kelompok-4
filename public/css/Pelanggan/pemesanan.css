@@ -1,18 +1,28 @@
 .listMenu{
+    display: block;
+    padding: 0 20px;
+}
+
+.judulListMenu{
+    margin-top: 100px;
+    padding: 0 20px;
+}
+
+.menuRow{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    margin-bottom: 40px;
 }
-.judulListMenu{
-    margin-top: 100px;
-}
+
 .menuItem{
     border: 1px solid black;
     padding: 10px;
     width: 250px;
     box-sizing: border-box;
 }
-.menuItem img {
+
+.menuItem img{
     display: block;
     margin: 0 auto;
     max-width: 100%;
@@ -20,6 +30,7 @@
     object-fit: cover;
     border-radius: 5px;
 }
+
 .jumlahItem{
     display: flex;
     align-items: center;

@@ -15,14 +15,25 @@ class controllerPemesanan extends BaseController{
         $menuModel = new menu_list();
         $kategoriModel = new menu_kategori();
 
-        $menu_list = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
-                               ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
-                               ->where('menu_list.Menu_Status', 'active')
-                               ->findAll();
+        $menu_all = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
+                      ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
+                      ->where('menu_list.Menu_Status', 'active')
+                      ->findAll();
+
+        $menu_list = [];
+        foreach($menu_all as $menu){
+            $kategori = $menu['Nama_Kategori'];
+            if(!isset($menu_list[$kategori])){
+                $menu_list[$kategori] = [];
+            }
+            $menu_list[$kategori][] = $menu;
+        }
 
         $nama_menu_keranjang = [];
-        foreach($menu_list as $menu){
-            $nama_menu_keranjang[$menu['ID_Menu']] = $menu['Nama_Menu'];
+        foreach($menu_list as $menus){
+            foreach($menus as $menu){
+                $nama_menu_keranjang[$menu['ID_Menu']] = $menu['Nama_Menu'];
+            }
         }
 
         $data = [
