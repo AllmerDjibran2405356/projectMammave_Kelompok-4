@@ -10,25 +10,27 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     </head>
     <body>
-        <?= view('layout/header') ?>
+        <div class="page-content">
+            <?= view('layout/header') ?>
 
-        <?php if(session()->getFlashdata('error')): ?>
-            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
-        <?php endif; ?>
+            <?php if(session()->getFlashdata('error')): ?>
+                <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+            <?php endif; ?>
         
-        <div class="login-container">
-            <h1>Masuk</h1>
+            <div class="login-container">
+                <h1>Masuk</h1>
             
-            <form action="<?= site_url('/Pelanggan/controllerLoginAkunPelanggan/loginAkun') ?>" method="post" enctype="multipart/form-data">
-                <input required type="email" name="Email" placeholder="Email">
+                <form action="<?= site_url('/Pelanggan/controllerLoginAkunPelanggan/loginAkun') ?>" method="post" enctype="multipart/form-data">
+                    <input required type="email" name="Email" placeholder="Email">
 
-                <div class="password-wrapper">
-                    <input required type="password" name="Password_User" placeholder="password" id="password">
-                    <span class="toggle-password" onclick='togglePassword()'>👁️</span>
-                </div>
+                    <div class="password-wrapper">
+                        <input required type="password" name="Password_User" placeholder="password" id="password">
+                        <span class="toggle-password" onclick='togglePassword()'>👁️</span>
+                    </div>
 
-                <button type="submit" class="btn-register">Masuk</button>
-            </form>
+                    <button type="submit" class="btn-register">Masuk</button>
+                </form>
+            </div>
         </div>
 
         <?= view('layout/footer') ?>

@@ -1,12 +1,21 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body{
   font-family: Arial, sans-serif;
   background: #fff;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
+
+.page-content{
+  flex: 1;
+}
+
 
 html{
   scroll-behavior: smooth;
