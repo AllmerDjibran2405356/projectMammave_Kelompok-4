@@ -7,14 +7,14 @@
     </head>
     <body>
         <button onclick="window.location.href='<?= base_url('Mitra/viewHomepageManajemen') ?>'">back</button>
-        <div class="menuList">
-            <h1>Manajemen Menu</h1>
+        <?php foreach($menu_kategori as $kategori): ?>
+        <div class="kategoriTable">
+            <h2><?= esc($kategori['Nama_Kategori']) ?></h2>
             <table>
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama Menu</th>
-                        <th>Nama Kategori</th>
                         <th>Harga</th>
                         <th>Deskripsi Menu</th>
                         <th>Gambar Menu</th>
@@ -22,26 +22,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php $no = 1; foreach($menu_list as $menu): ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= esc($menu['Nama_Menu']) ?></td>
-                        <td><?= esc($menu['Nama_Kategori']) ?></td>
-                        <td><?= esc($menu['Harga']) ?></td>
-                        <td><?= esc($menu['Deskripsi_Menu']) ?></td>
-                        <td><img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>"></td>
-                        <td class="tombolAksi">
-                            <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
-                            <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus menu ini?')">
-                                <input type="hidden" name="deleteMenu" value="deleted">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
+                    <?php
+                    $menus = $menu_by_kategori[$kategori['ID_Kategori']] ?? [];
+                    if (count($menus) > 0):
+                        $no = 1;
+                        foreach($menus as $menu): ?>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= esc($menu['Nama_Menu']) ?></td>
+                                <td><?= esc($menu['Harga']) ?></td>
+                                <td><?= esc($menu['Deskripsi_Menu']) ?></td>
+                                <td><img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>" width="100"></td>
+                                <td class="tombolAksi">
+                                    <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
+                                    <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yakin ingin menghapus menu ini?')">
+                                        <input type="hidden" name="deleteMenu" value="deleted">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr><td colspan="6" style="text-align:center;">Data masih kosong</td></tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
+    <?php endforeach; ?>
 
         <div class="editMenu">
             <h1>Edit Menu</h1><button onclick="closeEditMenu()">x</button><br>
@@ -65,7 +72,7 @@
                                     <option value="<?= esc($kategori['ID_Kategori']) ?>" <?= ($menu['ID_Kategori'] == $kategori['ID_Kategori']) ? 'selected' : '' ?>>
                                         <?= esc($kategori['Nama_Kategori']) ?>
                                     </option>
-                                <?php endforeach ?>
+                                <?php endforeach; ?>
                             </select>
                         </td>
                         <td><input required type="number" name="Harga" id="edit-Harga"></td>
@@ -96,7 +103,7 @@
                         <button href="<?= base_url('Mitra/controllerManajemenMenu/deleteKategori/' . $kategori['ID_Kategori']) ?>">Hapus</button>
                     </td>
                 </tr>
-                <?php endforeach ?>
+                <?php endforeach; ?>
             </table>
             <button onclick="openKategoriManagement()">Tambah Kategori</button>
         </div>
@@ -121,7 +128,7 @@
                         <option value="<?= esc($kategori['ID_Kategori']) ?>" <?= ($menu['ID_Kategori'] == $kategori['ID_Kategori']) ? 'selected' : '' ?>>
                             <?= esc($kategori['Nama_Kategori']) ?>
                         </option>
-                    <?php endforeach ?>
+                    <?php endforeach; ?>
                 </select><br>
                 <strong>Harga</strong><br>
                 <input required type="number" name="Harga"><br>

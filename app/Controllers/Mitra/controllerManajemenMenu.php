@@ -20,9 +20,14 @@ class controllerManajemenMenu extends BaseController{
                                ->orderBy('menu_list.ID_Kategori')
                                ->findAll();
 
+        $menuGroupedByKategori = [];
+        foreach($menu_list as $menu){
+            $menuGroupedByKategori[$menu['ID_Kategori']][] = $menu;
+        }
+
         $data = [
-            'menu_list'     => $menu_list,
-            'menu_kategori' => $kategoriModel->findAll()
+            'menu_by_kategori' => $menuGroupedByKategori,
+            'menu_kategori'    => $kategoriModel->findAll()
         ];
 
         return view('Mitra/viewManajemenMenu', $data);

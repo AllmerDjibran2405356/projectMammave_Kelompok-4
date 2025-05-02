@@ -57,14 +57,14 @@
                                 <button type="submit">Kurangi</button>
                             </form>
                         </li>
-                    <?php endforeach ?>
+                    <?php endforeach; ?>
                 </ul>
                 <form action="<?= site_url('/Pelanggan/controllerPemesanan/checkout') ?>" method="post">
                     <button type="submit">Checkout</button>
                 </form>
             <?php else: ?>
                 <p>Keranjang masih kosong.</p>
-            <?php endif ?>
+            <?php endif; ?>
         </div>
     </body>
 </html>
