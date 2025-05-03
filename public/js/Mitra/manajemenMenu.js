@@ -29,3 +29,27 @@ function openEditMenu(menu){
 function closeEditMenu(){
     document.querySelector(".editMenu").style.display = "none";
 }
+
+const modal = document.getElementById('modal');
+const span = document.getElementsByClassName('close')[0];
+
+function openModal() {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modal.classList.remove('show');
+}
+
+document.getElementById('btn-popup').addEventListener('click', openModal);
+
+button.onclick = function closeTambahMenu(){
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

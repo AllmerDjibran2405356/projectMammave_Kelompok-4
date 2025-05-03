@@ -1,36 +1,267 @@
-.menuList{
+html, body{
+    margin: 1%;
+}
+
+.menuList {
     display: block;
 }
-.menuList img{
-    display: block;
-    margin: 0 auto;
-    width: auto;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-.editMenu{
+
+.editMenu,
+.addMenu,
+.kategori,
+.manageMenu,
+.manageKategori {
     display: none;
 }
-.addMenu{
-    display: none;
-}
-.kategori{
-    display: none;
-}
-.manageMenu{
-    display: none;
-}
-.manageKategori{
-    display: none;
-}
-.tombolAksi{
-    display: flex;
+
+.tombolAksi {
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
-img{
-    width: 500px;
+
+.tombolAksi button {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+img {
+    display: flex;
+    width: 150px;
     height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+}
+
+table,
+.popup-table {
+    font-family: arial;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+th, td,
+.popup-table th, .popup-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+
+th, .popup-table th {
+    background-color: #f7ad45;
+    color: white;
+}
+
+td {
+    height: 60px;
+    min-height: 60px;
+}
+
+.popup-table th {
+    padding: 12px;
+    position: sticky;
+    top: 0;
+}
+
+table th:nth-child(1), .popup-table th:nth-child(1),
+table td:nth-child(1), .popup-table td:nth-child(1) {
+    width: 5%;
+}
+
+table th:nth-child(2), .popup-table th:nth-child(2),
+table td:nth-child(2), .popup-table td:nth-child(2) {
+    width: 20%;
+}
+
+table th:nth-child(3), .popup-table th:nth-child(3),
+table td:nth-child(3), .popup-table td:nth-child(3) {
+    width: 15%;
+}
+
+table th:nth-child(4), .popup-table th:nth-child(4),
+table td:nth-child(4), .popup-table td:nth-child(4) {
+    width: 30%;
+}
+
+table th:nth-child(5), .popup-table th:nth-child(5),
+table td:nth-child(5), .popup-table td:nth-child(5) {
+    width: 20%;
+}
+
+table th:nth-child(6), .popup-table th:nth-child(6),
+table td:nth-child(6), .popup-table td:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+#judul {
+    text-align: center;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#modal.show {
+    display: block;
+}
+
+#modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+#modal-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#modal-content,
+#modal-content-kategori,
+#modal-content-menu {
+    background-color: #fefefe;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+#modal-content {
+    max-width: 50%;
+}
+
+#modal-content-kategori {
+    max-width: 50%;
+}
+
+#modal-content-menu {
+    max-width: 80%;
+}
+
+#modal-content-menu input[type="text"],
+#modal-content-menu input[type="number"],
+#modal-content-menu input[type="file"],
+#modal-content-menu textarea {
+    width: 100%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+}
+
+#modal-content-menu input[type="file"] {
+    overflow-wrap: break-word;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    margin-top: 5px;
+}
+
+.btn-outline-success {
+    margin-right: 10px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #f7ad45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #e6952f;
+    transform: translateX(-2px);
+}
+
+.btn-back:active {
+    transform: scale(0.98);
+}
+
+#close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
