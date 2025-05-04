@@ -18,6 +18,7 @@ class controllerManajemenOrder extends BaseController{
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
+                                     ->orderBy('order_list.Waktu_Order', 'DESC')
                                      ->findAll();
 
         $orderDiproses = [];
@@ -60,6 +61,7 @@ class controllerManajemenOrder extends BaseController{
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
+                                     ->orderBy('order_list.Waktu_Order', 'DESC')
                                      ->findAll();
         
         $orderDiproses = [];
@@ -111,6 +113,7 @@ class controllerManajemenOrder extends BaseController{
                                      ->join('order_status', 'order_status.ID_Order = order_list.ID_Order')
                                      ->join('akun_pelanggan', 'akun_pelanggan.ID_User = order_list.ID_User')
                                      ->groupBy(['akun_pelanggan.Nama_Depan', 'order_list.Waktu_Order'])
+                                     ->orderBy('order_list.Waktu_Order', 'DESC')
                                      ->findAll();
 
         $orderDiproses = [];

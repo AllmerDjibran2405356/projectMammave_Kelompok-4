@@ -20,6 +20,8 @@
                     <tr>
                         <th>Waktu Order</th>
                         <th>Status Order</th>
+                        <th>Alamat</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -28,6 +30,8 @@
                         <tr>
                             <td><?= esc($data['Waktu_Order']) ?></td>
                             <td><?= esc($data['Order_Status']) ?></td>
+                            <td><?= esc($data['Alamat']) ?></td>
+                            <td><?= esc($data['Total_Harga']) ?></td>
                             <td>
                                 <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
@@ -48,6 +52,8 @@
                     <tr>
                         <th>Waktu Order</th>
                         <th>Status Order</th>
+                        <th>Alamat</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -56,6 +62,8 @@
                         <tr>
                             <td><?= esc($data['Waktu_Order']) ?></td>
                             <td><?= esc($data['Order_Status']) ?></td>
+                            <td><?= esc($data['Alamat']) ?></td>
+                            <td><?= esc($data['Total_Harga']) ?></td>
                             <td>
                                 <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
@@ -76,14 +84,16 @@
                     <tr>
                         <th>Nama Menu</th>
                         <th>Jumlah</th>
+                        <th>Total Harga</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if(!empty($isi_order)): ?>
                         <?php foreach($isi_order as $item): ?>
                             <tr>
-                                <td><?= esc($item->Nama_Menu) ?></td>
-                                <td><?= esc($item->Jumlah) ?></td>
+                                <td><?= esc($item['Nama_Menu']) ?></td>
+                                <td><?= esc($item['Jumlah']) ?></td>
+                                <td><?= esc($item['Total_Harga']) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>

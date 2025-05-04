@@ -37,7 +37,7 @@
                                     <td><img src="<?= base_url('images/menu/' . esc($menu['Nama_Gambar'])) ?>" width="100"></td>
                                     <td class="tombolAksi">
                                         <button type="button" onclick='openEditMenu(<?= json_encode($menu) ?>)' class="btn btn-outline-success">Edit</button>
-                                        <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingi menghapus menu ini?')">
+                                        <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Apakah anda yaking ingin menghapus menu ini?')">
                                             <input type="hidden" name="deleteMenu" value="deleted">
                                             <button type="submit" class="btn btn-outline-danger">Hapus</button>
                                         </form>
@@ -106,7 +106,10 @@
                         <td><?= $no++ ?></td>
                         <td><?= esc($kategori['Nama_Kategori']) ?></td>
                         <td>
-                            <button href="<?= base_url('Mitra/controllerManajemenMenu/deleteKategori/' . $kategori['ID_Kategori']) ?>" class="btn btn-outline-danger">Hapus</button>
+                            <form action="<?= '/Mitra/controllerManajemenMenu/deleteKategori/' . $kategori['ID_Kategori'] ?>" method="post" onsubmit="return confirm('Apakah anda yakin ingin menghapus kategori ini?')">
+                                <input type="hidden" name="deleteKategori" value="deleted">
+                                <button type="submit" class="btn btn-outline-danger">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -161,7 +164,7 @@
 
                             <div class="form-group">
                                 <strong>Gambar Menu</strong><br>
-                                <input type="file" id="myFile" name="Gambar"><br>
+                                <input required type="file" id="myFile" name="Gambar"><br>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Tambah Menu</button>

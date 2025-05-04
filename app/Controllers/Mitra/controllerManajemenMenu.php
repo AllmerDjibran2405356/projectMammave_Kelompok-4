@@ -17,8 +17,13 @@ class controllerManajemenMenu extends BaseController{
         $menu_list = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
                                ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
                                ->where('menu_list.Menu_Status', 'active')
+                               ->where('menu_kategori.Kategori_Status', 'active')
                                ->orderBy('menu_list.ID_Kategori')
                                ->findAll();
+
+        $kategori_list = $kategoriModel->select('menu_kategori.*')
+                                       ->where('menu_kategori.Kategori_Status', 'active')
+                                       ->findAll();
 
         $menuGroupedByKategori = [];
         foreach($menu_list as $menu){
@@ -27,7 +32,7 @@ class controllerManajemenMenu extends BaseController{
 
         $data = [
             'menu_by_kategori' => $menuGroupedByKategori,
-            'menu_kategori'    => $kategoriModel->findAll()
+            'menu_kategori'    => $kategori_list
         ];
 
         return view('Mitra/viewManajemenMenu', $data);
@@ -49,7 +54,7 @@ class controllerManajemenMenu extends BaseController{
             'Nama_Menu'      => $this->request->getPost('Nama_Menu'),
             'ID_Kategori'    => $this->request->getPost('ID_Kategori'),
             'Harga'          => $this->request->getPost('Harga'),
-            'Deksripsi_Menu' => $this->request->getPost('Deskripsi_Menu'),
+            'Deskripsi_Menu' => $this->request->getPost('Deskripsi_Menu'),
             'Nama_Gambar'    => $namaFile
         ]);
 
@@ -117,8 +122,12 @@ class controllerManajemenMenu extends BaseController{
 
     public function deleteKategori($id){
         $kategoriModel = new menu_kategori();
-        $kategoriModel->delete($id);
-        return redirect()->to('/Mitra/controllerManajemenMenu');
+
+        $new_kategori_status = $this->request->getPost('deleteKategori');
+
+        $kategoriModel->update($id, ['Kategori_Status' => $new_kategori_status]);
+
+        return redirect()->to('/Mitra/controllerManajemenMenu')->with('success', 'menu berhasil dihapus');
     }
 }
 
