@@ -9,100 +9,67 @@
     </head>
     <body>
         <?= view('layout/header') ?>
-        <?php $session = session(); ?>
-        <?php if($session->get('isLoggedIn')): ?>
-            <p>Riwayat Pemesanan <?= esc($session->get('Nama_Depan')) ?></p>
-        <?php endif; ?>
-        <div class="orderDalamProses">
-            <h1>Dalam Proses</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Waktu Order</th>
-                        <th>Status Order</th>
-                        <th>Alamat</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($orderDiproses as $data): ?>
-                        <tr>
-                            <td><?= esc($data['Waktu_Order']) ?></td>
-                            <td><?= esc($data['Order_Status']) ?></td>
-                            <td><?= esc($data['Alamat']) ?></td>
-                            <td><?= esc($data['Total_Harga']) ?></td>
-                            <td>
-                                <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
+        <div class="main-layout">
+            <div class="order-area">
+                <h1 class="section-title">Order Dalam Proses</h1>
+                <?php foreach($orderDiproses as $data): ?>
+                <div class="order-card">
+                    <div class="order-info">
+                        <div class="order-field"><?= esc($data['Waktu_Order']) ?></div>
+                        <div class="order-field"><?= esc($data['Total_Harga']) ?></div>
+                        <div class="order-field"><?= esc($data['Alamat']) ?></div>
+                    </div>
+                        <div class="order-info">
+                            <div class="order-field"><?= esc($data['Order_Status']) ?></div>
+                            <div class="order-action">
+                                <form method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($data['Waktu_Order']) ?>">
                                     <button type="submit">Isi Order</button>
                                 </form>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
 
-        <div class="orderSelesai">
-            <h1>Order yang Sudah Selesai</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Waktu Order</th>
-                        <th>Status Order</th>
-                        <th>Alamat</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($orderSelesai as $data): ?>
-                        <tr>
-                            <td><?= esc($data['Waktu_Order']) ?></td>
-                            <td><?= esc($data['Order_Status']) ?></td>
-                            <td><?= esc($data['Alamat']) ?></td>
-                            <td><?= esc($data['Total_Harga']) ?></td>
-                            <td>
-                                <form class="tombolManajemen" method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
+                <h1 class="section-title">Order Yang Sudah Selesai</h1>
+                <?php foreach($orderSelesai as $data): ?>
+                    <div class="order-card">
+                        <div class="order-info">
+                            <div class="order-field"><?= esc($data['Waktu_Order']) ?></div>
+                            <div class="order-field"><?= esc($data['Total_Harga']) ?></div>
+                            <div class="order-field"><?= esc($data['Alamat']) ?></div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-field"><?= esc($data['Order_Status']) ?></div>
+                            <div class="order-action">
+                                <form method="POST" action="<?= base_url('Pelanggan/controllerRiwayatPemesanan/isiOrder') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($data['ID_User']) ?>">
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($data['Waktu_Order']) ?>">
                                     <button type="submit">Isi Order</button>
                                 </form>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
 
-        <div>
-            <h1>Isi Order</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nama Menu</th>
-                        <th>Jumlah</th>
-                        <th>Total Harga</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="order-content">
+                <h2>Isi Order</h2>
+                <ul>
                     <?php if(!empty($isi_order)): ?>
                         <?php foreach($isi_order as $item): ?>
-                            <tr>
-                                <td><?= esc($item['Nama_Menu']) ?></td>
-                                <td><?= esc($item['Jumlah']) ?></td>
-                                <td><?= esc($item['Total_Harga']) ?></td>
-                            </tr>
+                            <li>
+                                <span><?= esc($item['Nama_Menu']) ?></span>
+                                <span>x<?= esc($item['Jumlah']) ?></span>
+                                <span><?= esc($item['Total_Harga']) ?></span>
+                            </li>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <tr>
-                            <td colspan="2">Tidak ada order</td>
-                        </tr>
+                        <li><span>Tidak ada order</span></li>
                     <?php endif; ?>
-                </tbody>
-            </table>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
