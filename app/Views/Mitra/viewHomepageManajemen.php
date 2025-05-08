@@ -8,10 +8,10 @@
     </head>
     <body>
         <div class="top">
-            <button class="btn-login" onclick="window.location.href='<?= site_url('/Mitra/controllerRegisterAdmin') ?>'">Tambahkan Admin</button>
-            <button onclick="window.location.href='<?= base_url('/Mitra/controllerManajemenUserAdmin') ?>'">Manajemen Akun Admin</button>
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='<?= site_url('/Mitra/controllerRegisterAdmin') ?>'">Tambahkan Admin</button>
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='<?= base_url('/Mitra/controllerManajemenUserAdmin') ?>'">Manajemen Akun Admin</button>
             <form action="<?= site_url('Mitra/controllerLogoutAdmin') ?>" method="post" style="display:inline;">
-                <button type="submit" class="btn-logout">Logout</button>
+                <button class="btn btn-primary btn-lg" type="submit" class="btn-logout">Logout</button>
             </form><br>
         </div>
         <div class="bottom">

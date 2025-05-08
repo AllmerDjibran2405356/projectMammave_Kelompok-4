@@ -23,8 +23,14 @@
             <input required type="text" name="Nomor_Telepon" placeholder="Masukkan Nomor Hp"><br>
             <textarea required name="Alamat" placeholder="Masukkan Alamat" oninput="autoresize(this)"></textarea><br>
             <input required type="text" name="Email" placeholder="Masukkan Email"><br>
-            <input required type="password" name="Password_User" placeholder="Masukkan Password"><br>
-            <input required type="password" name="Password_Confirm" placeholder="Masukkan Ulang password"><br>
+            <div class="password-wrapper">
+                <input required type="password" name="Password_User" placeholder="Masukkan Password"><br>
+                <img src="<?= base_url('/images/eye/eye-on.png') ?>" alt="Show Password" class="toggle-password" onclick="togglePassword(this)">
+            </div>
+            <div class="password-wrapper">
+                <input required type="password" name="Password_Confirm" placeholder="Masukkan Ulang password"><br>
+                <img src="<?= base_url('/images/eye/eye-on.png') ?>" alt="Show Password" class="toggle-password" onclick="togglePassword(this)">
+            </div>
             <input type="date" name="Tanggal_Lahir" placeholder="Masukkan Tanggal Lahir (optional)"><br>
             <button class="btn-signup">Sign Up</button>
         </form>

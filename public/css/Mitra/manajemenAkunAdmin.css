@@ -1,0 +1,60 @@
+html, body{
+    margin: 1%;
+  }
+  
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #f7ad45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #e6952f;
+    transform: translateX(-2px);
+}
+
+.btn-back:active {
+    transform: scale(0.98);
+}
+
+.tombolAksi {
+    align-items: center;
+    justify-content: center;
+}
+
+.tombolAksi button {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+table {
+    border: 1px solid #ddd;
+    font-family: arial;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f7ad45;
+    color: white;
+}
