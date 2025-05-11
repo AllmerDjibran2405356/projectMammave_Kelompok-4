@@ -16,7 +16,7 @@ body{
   min-height: 100vh;
 }
 
-.registerForm{
+.registerForm, .registerFormAdmin{
   margin-top: 10%;
   display: flex;
   flex-direction: column;
@@ -86,19 +86,24 @@ small a{
 }
 
 .password-wrapper{
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  margin-bottom: 15px;
 }
   
-.toggle-password{
+.toggle-password {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 18px;
-  user-select: none;
-  color: #555;
+  width: 20px;
+  height: 20px;
+}
+
+
+#password-admin{
+  margin-bottom: 20px;
 }
