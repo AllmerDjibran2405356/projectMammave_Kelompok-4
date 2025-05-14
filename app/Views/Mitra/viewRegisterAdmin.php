@@ -3,9 +3,12 @@
     <head>
         <title>Register Akun Admin</title>
         <link rel="stylesheet" href="<?= base_url('css/Mitra/registerAdmin.css') ?>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <button onclick="window.location.href='<?= base_url('Mitra/viewHomepageManajemen') ?>'" class="btn-back">back</button>
+        <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+            <a href="<?= base_url('Mitra/viewHomepageManajemen') ?>" class="btn btn-secondary">🔙 Kembali</a>
+        </div>
         <?php if(session()->getFlashdata('error')): ?>
             <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>

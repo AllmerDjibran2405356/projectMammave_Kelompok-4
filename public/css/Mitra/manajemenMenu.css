@@ -40,6 +40,21 @@ img {
     height: auto;
 }
 
+.table-kategori thead {
+    background-color: #f7ad45;
+    color: white;
+}
+.table-kategori tbody tr:hover {
+    background-color: #f2f6fc;
+}
+.table-kategori td,
+.table-kategori th {
+    vertical-align: middle;
+}
+.img-thumbnail {
+    object-fit: cover;
+}
+
 table,
 .popup-table {
     font-family: arial;

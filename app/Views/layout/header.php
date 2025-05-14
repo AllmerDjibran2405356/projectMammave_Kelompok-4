@@ -6,7 +6,6 @@
         </div>
         <div class="navbar-right">
             <a href="<?= site_url('Pelanggan/controllerHomepage') ?>" class="nav-link">Home</a>
-            <a href="#about-us" class="nav-link">About Us</a>
             
             <?php if (session()->get('isLoggedIn')): ?>
                 <div class="dropDown">
