@@ -17,7 +17,6 @@
 
         <section class="menu-section">
             <div class="menu-overlay">
-                <h1 class="menu">Menu</h1>
                 <div class="menu-images">
                     <div class="menu-card">
                         <img src="<?= base_url('images/homepage/gambar 1.png') ?>" alt="Lasagna">
