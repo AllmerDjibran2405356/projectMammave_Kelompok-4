@@ -32,7 +32,5 @@
         </div>
 
         <small>Belum punya akun?  <a class="btn-masuk" href="<?= site_url('/Pelanggan/controllerRegisterAkunPelanggan') ?>">  Daftar sekarang</a></small>
-
-        <?= view('layout/footer') ?>
     </body>
 </html>

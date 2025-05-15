@@ -6,10 +6,6 @@
         <link rel="stylesheet" href="<?= base_url('css/Mitra/loginAdmin.css') ?>">
     </head>
     <body>
-        <?php if(session()->getFlashdata('error')): ?>
-            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
-        <?php endif; ?>
-
         <div class="login-container">
             <h1>Login Admin</h1>
             <form action="<?= site_url('/Mitra/controllerLoginAdmin/loginAkunAdmin') ?>" method="post" enctype="multipart/form-data">

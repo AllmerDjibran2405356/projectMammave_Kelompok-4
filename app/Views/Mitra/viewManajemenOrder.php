@@ -18,7 +18,7 @@
     <div class="orderList">
         <div class="mb-5">
             <h2 class="text-center mb-4">Order dalam Proses</h2>
-            <table class="table table-bordered table-hover text-center">
+            <table class="table table-bordered table-hover text-center order-table">
                 <thead class="table-danger">
                     <tr>
                         <th>Nama Pelanggan</th>
@@ -58,7 +58,7 @@
 
         <div class="mb-5">
             <h2 class="text-center mb-4">Order yang Sudah Selesai</h2>
-            <table class="table table-bordered table-hover text-center">
+            <table class="table table-bordered table-hover text-center order-table">
                 <thead class="table-success">
                     <tr>
                         <th>Nama Pelanggan</th>
@@ -92,7 +92,7 @@
     <div class="orderContent <?= isset($show_order_content) && $show_order_content ? 'active' : '' ?>">
         <div id="modal-content">
             <h1 class="text-center mb-4">Isi Order</h1>
-            <button id="close" onclick="closeOrderContent()" class="btn-close"></button>
+            <button id="close" onclick="closeOrderContent()" class="btn-close">&times;</button>
             <table class="table table-bordered table-hover text-center">
                 <thead class="table-info">
                     <tr>
@@ -121,7 +121,7 @@
     <div class="updateStatus <?= isset($show_update_status) && $show_update_status ? 'active' : '' ?>">
         <div id="modal-content">
             <h2 class="text-center mb-4">Update Status Pemesanan</h2>
-            <button id="close" onclick="closeUpdateStatus()" class="btn-close"></button>
+            <button id="close" onclick="closeUpdateStatus()" class="btn-close">&times;</button>
             <form action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>" method="post">
                 <input type="hidden" name="ID_User" value="<?= esc($selected_user ?? '') ?>">
                 <input type="hidden" name="Waktu_Order" value="<?= esc($selected_waktu_order ?? '') ?>">

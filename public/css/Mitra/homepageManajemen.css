@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #f9f9f9;
+    background-color: #f8f9fa;
 }
 
 .top, .bottom {

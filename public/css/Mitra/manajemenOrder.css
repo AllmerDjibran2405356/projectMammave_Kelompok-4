@@ -50,6 +50,10 @@ th {
     color: white;
 }
 
+.order-table {
+  width: 100%;
+  table-layout: fixed; /* Memastikan kolom seimbang */
+}
 #judul {
     text-align: center;
 }

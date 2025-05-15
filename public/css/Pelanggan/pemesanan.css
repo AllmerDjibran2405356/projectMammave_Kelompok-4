@@ -95,6 +95,10 @@
   overflow-x: scroll;
 }
 
+.menuRow::-webkit-scrollbar, .menu-area::-webkit-scrollbar {
+  display: none;
+}
+
 .menuItem img {
   display: block;
   margin: 0 auto;
