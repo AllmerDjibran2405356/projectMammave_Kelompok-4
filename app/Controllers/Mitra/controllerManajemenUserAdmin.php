@@ -10,9 +10,14 @@ class controllerManajemenUserAdmin extends BaseController{
             return redirect()->to('Mitra/controllerLoginAdmin')->with('error', 'Harap login terlebih dahulu');
         }
         $modelListAkun = new list_akun_mitra();
+        $currentAccount = session()->get('Username');
+
+        $list_akun = $modelListAkun->select('akun_admin.*')
+                                   ->where('akun_admin.Username !=', $currentAccount)
+                                   ->findAll();
 
         $data = [
-            'list_akun' => $modelListAkun->findAll()
+            'list_akun' => $list_akun
         ];
 
         return view('Mitra/viewManajemenUserAdmin', $data);

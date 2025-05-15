@@ -35,18 +35,18 @@
                             <td><?= esc($order['Alamat']) ?></td>
                             <td><?= esc($order['Waktu_Order']) ?></td>
                             <td><?= esc($order['Order_Status']) ?></td>
-                            <td>
-                                <div class="d-flex flex-column gap-2">
+                            <td class="text-center align-middle">
+                                <div class="d-grid gap-2">
                                     <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/orderContent') ?>">
                                         <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
                                         <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
-                                        <button type="submit" class="btn btn-outline-success btn-sm">Isi Order</button>
+                                        <button type="submit" class="btn btn-outline-success btn-sm w-100">Isi Order</button>
                                     </form>
                                     <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/updateStatus') ?>">
                                         <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
                                         <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
                                         <input type="hidden" name="Nama_Depan" value="<?= esc($order['Nama_Depan']) ?>">
-                                        <button type="submit" class="btn btn-outline-success btn-sm">Update Status</button>
+                                        <button type="submit" class="btn btn-outline-warning btn-sm w-100">Update Status</button>
                                     </form>
                                 </div>
                             </td>
@@ -75,11 +75,11 @@
                             <td><?= esc($order['Alamat']) ?></td>
                             <td><?= esc($order['Waktu_Order']) ?></td>
                             <td><?= esc($order['Order_Status']) ?></td>
-                            <td>
+                            <td class="text-center align-middle">
                                 <form method="POST" action="<?= base_url('Mitra/controllerManajemenOrder/orderContent') ?>">
                                     <input type="hidden" name="ID_User" value="<?= esc($order['ID_User']) ?>">
                                     <input type="hidden" name="Waktu_Order" value="<?= esc($order['Waktu_Order']) ?>">
-                                    <button type="submit" class="btn btn-outline-success btn-sm">Isi Order</button>
+                                    <button type="submit" class="btn btn-outline-success btn-sm w-100">Isi Order</button>
                                 </form>
                             </td>
                         </tr>

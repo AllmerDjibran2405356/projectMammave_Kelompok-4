@@ -18,6 +18,7 @@ class controllerPemesanan extends BaseController{
         $menu_all = $menuModel->select('menu_list.*, menu_kategori.Nama_Kategori')
                       ->join('menu_kategori', 'menu_kategori.ID_Kategori = menu_list.ID_Kategori')
                       ->where('menu_list.Menu_Status', 'active')
+                      ->orderBy('menu_kategori.Nama_Kategori', 'ASC')
                       ->findAll();
 
         $menu_list = [];
@@ -90,7 +91,7 @@ class controllerPemesanan extends BaseController{
         }
     
         session()->remove('keranjang');
-        return redirect()->back()->with('success', 'Pemesanan berhasil!');
+        return redirect()->to('Pelanggan/controllerHomepage');
     }
 
     public function kurangiKeranjang(){

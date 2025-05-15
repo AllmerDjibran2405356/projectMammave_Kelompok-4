@@ -1,3 +1,8 @@
+body, html{
+  margin: 0px;
+  overflow: hidden;
+}
+
 .main-layout {
   display: flex;
   height: 100vh; 
@@ -167,4 +172,113 @@ input::-webkit-inner-spin-button {
 
 .menuItem button[type="submit"]:hover {
   background: #27be5c;
+}
+
+.menu-scroll-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.scroll-btn {
+  background-color: #d2f3dd;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #000;
+}
+
+.scroll-btn:hover {
+  background-color: #27be5c;
+  color: white;
+}
+
+.checkout-popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.checkout-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+.checkout-content h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.checkout-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.checkout-content li {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+/* Tombol Checkout */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .button-group {
+    flex-direction: row;
+  }
+}
+
+.btn-confirm {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirm:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: white;
+  color: #6c757d;
+  border: 2px solid #6c757d;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
 }

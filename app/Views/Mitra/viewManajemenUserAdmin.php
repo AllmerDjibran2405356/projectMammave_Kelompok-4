@@ -6,35 +6,53 @@
     <title>Manajemen User Web Admin</title>
     <link rel="stylesheet" href="<?= base_url('css/Mitra/manajemenAkunAdmin.css') ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        .table td,
+        .table th {
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .btn-delete {
+            padding: 4px 10px;
+            font-size: 0.85rem;
+        }
+        .table-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body class="bg-light">
-
     <div class="container py-5">
         <div class="d-flex justify-content-center mb-4">
             <a href="<?= base_url('Mitra/viewHomepageManajemen') ?>" class="btn btn-secondary">🔙 Kembali</a>
         </div>
-        <h5 class="mb-0 text-center">Manajemen User Web Admin</h5>
-        <table class="table table-bordered table-hover text-center">
-            <thead class="table-warning">
-                <tr>
-                    <th>Nama User</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($list_akun as $user): ?>
-                    <tr>
-                        <td><?= esc($user['Username']) ?></td>
-                        <td>
-                            <form action="<?= base_url('/Mitra/controllerManajemenUserAdmin/deleteAkun/' . $user['ID_Admin']) ?>" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus admin ini?')">
-                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+        <h5 class="mb-4 text-center">Manajemen User Web Admin</h5>
 
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center">
+                    <thead class="table-warning">
+                        <tr>
+                            <th>Nama User</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($list_akun as $user): ?>
+                            <tr>
+                                <td><?= esc($user['Username']) ?></td>
+                                <td>
+                                    <form action="<?= base_url('/Mitra/controllerManajemenUserAdmin/deleteAkun/' . $user['ID_Admin']) ?>" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus admin ini?')">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm btn-delete">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -8,3 +8,16 @@ function changeJumlah(idMenu, delta) {
     if (value < 1) value = 1;
     input.value = value;
 }
+
+function scrollMenu(button, direction) {
+    const targetId = button.getAttribute('data-target');
+    const container = document.getElementById(targetId);
+    const scrollAmount = 300;
+
+    if (container) {
+        container.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}

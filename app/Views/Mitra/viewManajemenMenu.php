@@ -54,10 +54,10 @@
                                     </td>
                                     <td>
                                         <div class="d-flex flex-column gap-2">
-                                            <button class="btn btn-outline-success btn-sm" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
+                                            <button class="btn btn-outline-success btn-sm w-100" onclick='openEditMenu(<?= json_encode($menu) ?>)'>Edit</button>
                                             <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteMenu/' . $menu['ID_Menu']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus menu ini?')">
                                                 <input type="hidden" name="deleteMenu" value="deleted">
-                                                <button class="btn btn-outline-danger btn-sm" type="submit">Hapus</button>
+                                                <button class="btn btn-outline-danger btn-sm w-100" type="submit">Hapus</button>
                                             </form>
                                         </div>
                                     </td>
@@ -110,10 +110,10 @@
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= esc($kategori['Nama_Kategori']) ?></td>
-                        <td>
+                        <td class="text-center align-middle">
                             <form action="<?= base_url('Mitra/controllerManajemenMenu/deleteKategori/' . $kategori['ID_Kategori']) ?>" method="post" onsubmit="return confirm('Apakah anda yakin ingin menghapus kategori ini?')">
                                 <input type="hidden" name="deleteKategori" value="deleted">
-                                <button type="button" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-sm text-white fw-bold" style="background-color: #dc3545;">Hapus</button>
                             </form>
                         </td>
                     </tr>
