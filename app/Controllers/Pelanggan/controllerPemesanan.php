@@ -68,30 +68,47 @@ class controllerPemesanan extends BaseController{
     }
 
     public function checkout(){
-        if(!session()->get('isLoggedIn')){
+        if (!session()->get('isLoggedIn')) {
             return redirect()->to('/Pelanggan/controllerLoginAkunPelanggan')->with('error', 'Harap login terlebih dahulu');
         }
-    
+
         $keranjang = session()->get('keranjang');
-        if(!$keranjang || empty($keranjang)){
+        if (!$keranjang || empty($keranjang)) {
             return redirect()->back()->with('error', 'Keranjang kosong.');
         }
-    
+
         $orderModel = new order_list();
+        $menuModel = new menu_list();
+
         $id_user = session()->get('ID_User');
-    
-        foreach($keranjang as $id_menu => $jumlah){
-            for($i = 0; $i < $jumlah; $i++){
+        $nama_depan = session()->get('Nama_Depan');
+        $nama_belakang = session()->get('Nama_Belakang');
+
+        $pesan = "Halo, saya " . $nama_depan . " " . $nama_belakang . " ingin memesan:\n";
+        $alamat = session()->get('Alamat');
+
+        foreach ($keranjang as $id_menu => $jumlah) {
+            for ($i = 0; $i < $jumlah; $i++) {
                 $orderModel->insert([
                     'ID_User'     => $id_user,
                     'ID_Menu'     => $id_menu,
                     'Waktu_Order' => date('Y-m-d H:i:s')
                 ]);
             }
+
+            $menu = $menuModel->find($id_menu);
+            if ($menu) {
+                $pesan .= "- " . $menu['Nama_Menu'] . " Jumlah:  " . $jumlah . "\n";
+            }
         }
+
+        $pesan .= "Alamat :\n" . $alamat;
     
         session()->remove('keranjang');
-        return redirect()->to('Pelanggan/controllerHomepage');
+
+        $no_wa = "6281336172408";
+        $linkWA = "https://wa.me/" . $no_wa . "?text=" . urlencode($pesan);
+        return redirect()->to($linkWA);
     }
 
     public function kurangiKeranjang(){

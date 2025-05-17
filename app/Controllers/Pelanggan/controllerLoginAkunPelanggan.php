@@ -20,9 +20,13 @@ class controllerLoginAkunPelanggan extends BaseController{
 
         if($akun && password_verify($password, $akun['Password_User'])){
             session()->set('isLoggedIn', true);
-            session()->set('Email', $akun['Email']);
             session()->set('ID_User', $akun['ID_User']);
             session()->set('Nama_Depan', $akun['Nama_Depan']);
+            session()->set('Nama_Belakang', $akun['Nama_Belakang']);
+            session()->set('Alamat', $akun['Alamat']);
+            session()->set('Tanggal_Lahir', $akun['Tanggal_Lahir']);
+            session()->set('Nomor_Telepon', $akun['Nomor_Telepon']);
+            session()->set('Email', $akun['Email']);
             return redirect()->to('Pelanggan/controllerHomepage');
         }else{
             return redirect()->to('Pelanggan/controllerLoginAkunPelanggan')->with('error', 'Cek Email/Password');
