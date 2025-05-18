@@ -27,6 +27,7 @@ class controllerLoginAkunPelanggan extends BaseController{
             session()->set('Tanggal_Lahir', $akun['Tanggal_Lahir']);
             session()->set('Nomor_Telepon', $akun['Nomor_Telepon']);
             session()->set('Email', $akun['Email']);
+            session()->set('Profile_Picture', $akun['Picture_Name']);
             return redirect()->to('Pelanggan/controllerHomepage');
         }else{
             return redirect()->to('Pelanggan/controllerLoginAkunPelanggan')->with('error', 'Cek Email/Password');

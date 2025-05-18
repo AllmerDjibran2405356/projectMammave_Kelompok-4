@@ -1,59 +1,76 @@
-.navbar{
+/* === FONT === */
+@font-face {
+    font-family: 'MyFont';
+    src: url('../font/Italianno-Regular.ttf') format('truetype');
+}
+
+/* === NAVBAR === */
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #ffffff;
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Gabungan efek shadow */
     z-index: 1000;
     font-family: Arial, sans-serif;
 }
-  
-.navbar-container{
+
+/* === NAVBAR CONTAINER === */
+.navbar-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-  
-.navbar-left{
+
+/* === NAVBAR LEFT === */
+.navbar-left,
+.navbar-right {
     display: flex;
     align-items: center;
 }
-  
-.nav-logo{
-    width: 30px;
-    height: 30px;
+
+/* === NAVBAR LOGO === */
+.nav-logo {
+    width: auto;
+    height: auto;
     margin-right: 10px;
 }
-  
-@font-face{
-    font-family: 'MyFont';
-    src: url('../font/Italianno-Regular.ttf') format('truetype');
-}
-  
-.brand-name{
+
+/* === BRAND NAME === */
+.brand-name {
     color: rgb(0, 0, 0);
     font-size: 32px;
     font-weight: bold;
-    font-family: 'Myfont', sans-serif;
+    font-family: 'MyFont', sans-serif;
 }
-  
-.navbar-right .nav-link{
-    margin-left: 20px;
+
+/* === NAV LINKS === */
+.nav-link,
+.navbar-right .nav-link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000; /* Konsisten dengan warna hitam */
     font-weight: bold;
+    padding: 8px 12px;
     transition: color 0.3s;
 }
-  
-.navbar-right .nav-link:hover{
-    color: #e74c3c;
+
+.nav-link:hover,
+.navbar-right .nav-link:hover {
+    color: #e74c3c; /* Hover merah */
 }
-  
-.btn-login{
+
+/* === USER TEXT === */
+.nav-user {
+    font-size: 14px;
+    color: #333;
+}
+
+/* === BUTTONS === */
+.btn-login,
+.btn-logout {
     background-color: transparent;
     color: #e74c3c;
     border: 2px solid #e74c3c;
@@ -65,14 +82,15 @@
     transition: all 0.3s ease;
     margin-left: 10px;
 }
-  
-.btn-login:hover{
+
+.btn-login:hover,
+.btn-logout:hover {
     background-color: #c0392b;
     color: white;
 }
-  
-.btn-register{
-    background-color: #c0392b; 
+
+.btn-register {
+    background-color: #c0392b;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -83,26 +101,14 @@
     transition: background-color 0.3s ease;
     margin-left: 10px;
 }
-  
-.btn-logout{
-    background-color: transparent;
-    color: #e74c3c;
-    border: 2px solid #e74c3c;
-    padding: 8px 9px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+.btn-register:hover,
+.btn-order:hover {
+    background-color: #e74c3c;
 }
-  
-.btn-logout:hover{
+
+.btn-order {
     background-color: #c0392b;
-    color: white;
-}
-  
-.btn-order{
-    background-color: #c0392b; 
     color: white;
     border: none;
     padding: 15px 30px;
@@ -112,28 +118,25 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
-.btn-register:hover
-.btn-order:hover{
-    background-color: #e74c3c;
-}
-  
-.dropDown{
+
+/* === DROPDOWN === */
+.dropDown {
     display: inline-block;
     margin-left: 10px;
 }
-  
-.btn-drop{
-    background-color: #c0392b;
-    color: white;
-    padding: 10px 16px;
-    font-size: 18px;
-    border: none;
+
+.btn-drop {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 6px;
+    object-fit: cover;
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
-  
-.dropdown-content{
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
@@ -143,20 +146,19 @@
     border-radius: 6px;
     overflow: hidden;
 }
-  
-.dropdown-content a{
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease;
 }
-  
-.dropdown-content a:hover{
+
+.dropdown-content a:hover {
     background-color: #f1f1f1;
 }
-  
-.dropDown:hover
-.dropdown-content{
+
+.dropDown:hover .dropdown-content {
     display: block;
 }

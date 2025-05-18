@@ -65,5 +65,8 @@ $routes->post('/Pelanggan/controllerRegisterAkunPelanggan/registerAkun', 'Pelang
 $routes->get('/Pelanggan/controllerLoginAkunPelanggan', 'Pelanggan\controllerLoginAkunPelanggan::viewLogin');
 $routes->post('/Pelanggan/controllerLoginAkunPelanggan/loginAkun', 'Pelanggan\controllerLoginAkunPelanggan::loginAkun');
 
+//edit akun pelanggan
+$routes->get('/Pelanggan/controllerEditAkun', 'Pelanggan\controllerEditAkun::viewEditAkun');
+$routes->post('/Pelanggan/controllerEditAkun/editAkun', 'Pelanggan\controllerEditAkun::editAkun');
 //logout akun pelanggan
 $routes->post('Pelanggan/controllerLogoutAkunPelanggan', 'Pelanggan\controllerLogoutAkunPelanggan::logOut');
