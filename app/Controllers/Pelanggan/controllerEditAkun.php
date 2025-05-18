@@ -34,7 +34,10 @@ class controllerEditAkun extends BaseController{
         }
 
         if(!empty($dataUpdate)){
-            $model->update($id_user, $dataUpdate);
+            if($model->update($id_user, $dataUpdate)){
+                $dataBaru = $model->find($id_user);
+                session()->set($dataBaru);
+            };
             return redirect()->back()->with('success', 'Data berhasil diperbarui.');
         }else{
             return redirect()->back()->with('info', 'Tidak ada perubahan data');

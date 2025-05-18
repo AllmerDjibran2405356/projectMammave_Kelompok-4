@@ -162,3 +162,7 @@
 .dropDown:hover .dropdown-content {
     display: block;
 }
+
+.dropdown-content {
+    text-align: left;
+}

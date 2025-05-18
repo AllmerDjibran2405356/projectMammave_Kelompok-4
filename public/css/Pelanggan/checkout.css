@@ -1,0 +1,74 @@
+/* Reset dan basic layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f9fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Judul utama */
+h1 {
+    color: #28a745;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Paragraf */
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Tombol WhatsApp */
+.button-wa {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-wa:hover {
+    background-color: #1ebe5b;
+}
+
+/* Link kembali */
+a[href*="controllerHomepage"] {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a[href*="controllerHomepage"]:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .button-wa {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}

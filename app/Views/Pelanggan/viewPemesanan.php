@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Pemesanan</title>
         <script src="<?= base_url('js/Pelanggan/pemesanan.js') ?>"></script>
         <link rel="stylesheet" href="<?= base_url('css/Pelanggan/pemesanan.css') ?>">

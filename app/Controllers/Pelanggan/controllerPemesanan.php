@@ -108,7 +108,17 @@ class controllerPemesanan extends BaseController{
 
         $no_wa = "6281336172408";
         $linkWA = "https://wa.me/" . $no_wa . "?text=" . urlencode($pesan);
-        return redirect()->to($linkWA);
+        session()->set('linkWA', $linkWA);
+
+        return redirect()->to('/Pelanggan/controllerPemesanan/checkoutSuccess');
+    }
+
+    public function checkoutSuccess(){
+        $linkWA = session()->get('linkWA');
+        if(!$linkWA){
+            return redirect()->to('Pelanggan/beranda')->with('error', 'Tidak ada pesanan yang di proses');
+        }
+        return view('Pelanggan/viewCheckoutSuccess', ['linkWA' => $linkWA]);
     }
 
     public function kurangiKeranjang(){

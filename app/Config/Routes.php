@@ -52,6 +52,7 @@ $routes->get('/Pelanggan/controllerPemesanan', 'Pelanggan\controllerPemesanan::v
 $routes->post('/Pelanggan/controllerPemesanan/tambahKeranjang', 'Pelanggan\controllerPemesanan::tambahKeranjang');
 $routes->post('/Pelanggan/controllerPemesanan/kurangiKeranjang', 'Pelanggan\controllerPemesanan::kurangiKeranjang');
 $routes->post('/Pelanggan/controllerPemesanan/checkout', 'Pelanggan\controllerPemesanan::checkout');
+$routes->get('/Pelanggan/controllerPemesanan/checkoutSuccess', 'Pelanggan\controllerPemesanan::checkoutsuccess');
 
 //riwayat pemesanan
 $routes->get('/Pelanggan/controllerRiwayatPemesanan', 'Pelanggan\controllerRiwayatOrder::viewRiwayatOrder');
@@ -68,5 +69,6 @@ $routes->post('/Pelanggan/controllerLoginAkunPelanggan/loginAkun', 'Pelanggan\co
 //edit akun pelanggan
 $routes->get('/Pelanggan/controllerEditAkun', 'Pelanggan\controllerEditAkun::viewEditAkun');
 $routes->post('/Pelanggan/controllerEditAkun/editAkun', 'Pelanggan\controllerEditAkun::editAkun');
+
 //logout akun pelanggan
 $routes->post('Pelanggan/controllerLogoutAkunPelanggan', 'Pelanggan\controllerLogoutAkunPelanggan::logOut');
