@@ -26,6 +26,14 @@ p {
     color: #555;
 }
 
+/* Teks peringatan */
+.warning-text {
+    color: #ff8800;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1em;
+}
+
 /* Tombol WhatsApp */
 .button-wa {
     display: inline-block;
@@ -46,15 +54,19 @@ p {
     background-color: #1ebe5b;
 }
 
-/* Link kembali */
-a[href*="controllerHomepage"] {
+/* Link kembali ke beranda sebagai teks biasa */
+.link-home {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    margin-top: 30px;
+    display: inline-block;
+    transition: color 0.2s ease;
 }
 
-a[href*="controllerHomepage"]:hover {
+.link-home:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 /* Responsive */

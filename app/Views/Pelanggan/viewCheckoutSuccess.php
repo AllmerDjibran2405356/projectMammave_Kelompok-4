@@ -12,10 +12,14 @@
     <?= view('layout/header') ?>
 
     <h1>✅ Pesanan Berhasil Dibuat!</h1>
-    <p>Silakan konfirmasi pesanan Anda melalui WhatsApp:</p>
+
+    <p>Silakan konfirmasi pesanan Anda melalui WhatsApp sebelum kembali ke beranda:</p>
     <a href="<?= $linkWA ?>" target="_blank" rel="noopener noreferrer" class="button-wa">
         Buka WhatsApp
     </a>
-    <p style="margin-top: 30px;"><a href="<?= site_url('Pelanggan/controllerHomepage') ?>">Kembali ke Beranda</a></p>
+
+    <p class="warning-text">⚠️ Peringatan: Berikan catatan tambahan bila butuh</p>
+
+    <p><a href="<?= site_url('Pelanggan/controllerHomepage') ?>" class="link-home">Kembali ke Beranda</a></p>
 </body>
 </html>
