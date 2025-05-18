@@ -1,35 +1,78 @@
-body, html{
-  margin: 0px;
-  overflow: hidden;
+/* Reset dasar */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
 }
 
+/* Layout utama */
 .main-layout {
   display: flex;
-  height: 100vh; 
+  flex-direction: column;
   gap: 20px;
   padding: 10px;
+  height: auto;
+
+  /* Padding atas default agar ruang untuk navbar */
+  padding-top: 70px; /* default start at 70px */
+  box-sizing: border-box;
 }
 
+/* Navbar fixed (contoh styling) */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: white;
+  z-index: 9999;
+  padding: 10px 20px;
+  font-size: 20px;
+  line-height: 1.2;
+  height: 70px; /* tinggi navbar */
+}
+
+/* Area Menu */
 .menu-area {
- flex: 2;
- overflow-x: scroll;
- padding: 10px;
+  flex: 2;
+  overflow-x: auto;
+  padding: 10px;
+  width: 100%;
 }
 
+/* Keranjang */
 .keranjang {
- flex: 1; 
- background: #f9f9f9;
- border-radius: 15px;
- box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
- padding: 20px;
- min-width: 250px;
- max-width: 300px;
- position: sticky; 
- top: 100px;
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: none;
+  position: relative;
+  top: auto;
 }
 
+/* Aturan untuk layar lebar */
+@media (min-width: 768px) {
+  .main-layout {
+    flex-direction: row;
+    height: 100vh;
+    padding-top: 70px; /* sesuaikan tinggi navbar */
+  }
+  
+  .keranjang {
+    max-width: 300px;
+    position: sticky;
+    top: calc(70px + 30px); /* sticky di bawah navbar */
+  }
+}
+
+/* Keranjang */
 .keranjang h2 {
-  margin-top: 10%;
+  margin-top: 0;
   margin-bottom: 15px;
   font-size: 18px;
 }
@@ -72,7 +115,7 @@ body, html{
   color: #000;
 }
 
-
+/* Menu */
 .menuItem {
   background: #fff;
   flex: 0 0 auto;
@@ -80,7 +123,7 @@ body, html{
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  width: 250px;
+  min-width: 220px;
   box-sizing: border-box;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -92,18 +135,20 @@ body, html{
 
 .menuRow {
   display: flex;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   gap: 20px;
-  overflow-x: auto; 
+  overflow-x: auto;
   padding-bottom: 10px;
   margin-bottom: 40px;
-  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
-.menuRow::-webkit-scrollbar, .menu-area::-webkit-scrollbar {
+.menuRow::-webkit-scrollbar,
+.menu-area::-webkit-scrollbar {
   display: none;
 }
 
+/* Gambar Menu */
 .menuItem img {
   display: block;
   margin: 0 auto;
@@ -127,6 +172,7 @@ body, html{
   margin-top: 10px;
 }
 
+/* Tombol jumlah */
 .jumlahItem {
   display: flex;
   align-items: center;
@@ -158,6 +204,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/* Tombol submit */
 .menuItem button[type="submit"] {
   width: 100%;
   padding: 10px;
@@ -174,6 +221,7 @@ input::-webkit-inner-spin-button {
   background: #27be5c;
 }
 
+/* Scroll menu kiri-kanan */
 .menu-scroll-controls {
   display: flex;
   justify-content: flex-end;
@@ -197,6 +245,7 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
+/* Checkout Popup */
 .checkout-popup {
   display: none;
   position: fixed;
@@ -212,7 +261,7 @@ input::-webkit-inner-spin-button {
   background-color: #fff;
   margin: 10% auto;
   padding: 20px;
-  width: 80%;
+  width: 90%;
   max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 0 10px #000;
@@ -281,4 +330,25 @@ input::-webkit-inner-spin-button {
 .btn-cancel:hover {
   background-color: #f8f9fa;
   color: #343a40;
+}
+
+/* Responsif padding-top main-layout dari lebar 1050 sampai 480 */
+@media (max-width: 1050px) {
+  .main-layout {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-layout {
+    padding-top: 130px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

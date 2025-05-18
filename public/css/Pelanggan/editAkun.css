@@ -1,49 +1,94 @@
-html, body{
+/* Reset margin dan padding */
+html, body {
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
 }
 
-h1{
-    margin-top: 10%;
+.container {
+    max-width: 600px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10vh; /* default padding top */
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.editForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 15px;
 }
 
-.editForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-input{
-    width: 460px;
-    padding: 12px 40px 12px 12px;
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
     border: 1px solid #888;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
 }
 
-textarea{
-    width: 460px;
-    padding: 12px 40px 12px 12px;
-    border: 1px solid #888;
-    border-radius: 4px;
+textarea {
+    min-height: 100px;
 }
 
-.btn-signup{
-    background-color: #c0392b; 
+input[type="date"] {
+    padding-left: 12px;
+}
+
+.btn-signup {
+    background-color: #c0392b;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    width: 500px;
     transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 100%;
 }
 
-.btn-signup:hover{
+.btn-signup:hover {
     background-color: #e74c3c;
+}
+
+/* Responsive padding-top for container */
+
+/* At max-width 1050px increase padding-top */
+@media (max-width: 1050px) {
+    .container {
+        padding-top: 15vh;
+    }
+}
+
+/* At max-width 768px increase padding-top */
+@media (max-width: 768px) {
+    .container {
+        padding-top: 18vh;
+    }
+}
+
+/* At max-width 480px increase padding-top and adjust margin */
+@media (max-width: 480px) {
+    .container {
+        padding-top: 20vh;
+        margin: 10% 10px 40px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
 }

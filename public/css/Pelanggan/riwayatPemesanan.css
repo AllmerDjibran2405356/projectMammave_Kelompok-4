@@ -1,105 +1,238 @@
+/* Reset dan dasar */
 html, body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    height: 100%;
 }
 
+body {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: flex-start; /* start from top */
+    min-height: 100vh;
+    padding: 20px 10px; /* beri padding agar tidak mepet */
+    box-sizing: border-box;
+}
+
+/* Main container */
 .main-layout {
-    display: flex;
-    margin: 0 15%;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.order-area {
-    flex: 3;
-    margin-top: 80px;
-}
-
-.order-content {
-    flex: 1;
-    background: #f9f9f9;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: sticky;
-    top: 100px;
-    min-width: 250px;
-    max-width: 300px;
-    height: fit-content;
-}
-
-.order-content h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.order-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.order-content li {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.section-title {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
-.order-card {
-    width: 90%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 700px;  /* maksimal lebar container */
     background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 25px;
+
+    /* Padding top agar tidak tertutup navbar fixed */
+    padding-top: 80px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+/* Responsive padding top untuk navbar */
+@media (max-width: 768px) {
+    .main-layout {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-layout {
+        padding-top: 60px;
+    }
+}
+
+/* Container order list */
+.order-area {
+    margin-top: 0; /* hilangkan margin atas agar rapat ke atas container */
+}
+
+/* Judul section */
+.section-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+}
+
+/* Kartu order */
+.order-card {
+    background-color: #fafafa;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: 20px 24px;
     margin-bottom: 20px;
+    transition: transform 0.2s ease;
 }
 
+.order-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Info dalam kartu order */
 .order-info {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    align-items: center;
+    gap: 10px;
 }
 
 .order-field {
-    width: 48%;
-    margin-bottom: 8px;
-    word-break: break-word;
+    flex: 1 1 45%; /* fleksibel, minimal 45% */
     color: #000;
+    font-size: 15px;
+    word-break: break-word;
 }
 
+/* Tombol dan aksi */
 .order-action {
     display: flex;
     justify-content: flex-end;
-    width: 48%;
+    flex: 1 1 45%;
     margin-top: 10px;
 }
 
-.tombolManajemen button,
 .order-action button {
     background-color: #d4f5dc;
     color: #000;
-    font-weight: bold;
+    font-weight: 700;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 18px;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.tombolManajemen button:hover,
 .order-action button:hover {
     background-color: #b9eccb;
+}
+
+/* Modal overlay */
+.modal {
+    display: none; /* hidden default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #f9f9f9;
+    margin: 60px auto;
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-content li {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: #222;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 10px;
+        align-items: flex-start;
+    }
+
+    .main-layout {
+        max-width: 100%;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .order-card {
+        padding: 15px 18px;
+    }
+
+    .order-info {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .order-field, .order-action {
+        flex: 1 1 100%;
+        width: 100%;
+        text-align: left;
+    }
+
+    .order-action {
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-action button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    .modal-content {
+        padding: 20px 25px;
+    }
+
+    .modal-content li {
+        font-size: 14px;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
 }

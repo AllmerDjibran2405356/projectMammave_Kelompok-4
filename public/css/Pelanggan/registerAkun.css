@@ -1,22 +1,25 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 
-html, body{
-  margin: 0;
-}
-
-body{
-  font-family: Arial, sans-serif;
-  background: #fff;
+html,
+body {
   margin: 0;
   padding: 0;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.registerForm, .registerFormAdmin{
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerForm, .registerFormAdmin {
   margin-top: 10%;
   display: flex;
   flex-direction: column;
@@ -24,26 +27,35 @@ body{
   justify-content: center;
 }
 
-.Name input{
-  width: 200px;
-  padding: 12px 40px 12px 12px;
+/* Nama input lebih besar, tapi tetap proporsional */
+.Name input {
+  width: 272px;
+  padding: 12px;
   margin-bottom: 20px;
   border: 1px solid #888;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input{
-  width: 460px;
-  padding: 12px 40px 12px 12px;
+/* Semua input lain dibuat lebih besar dari tombol submit */
+input {
+  width: 550px;
+  padding: 12px 40px 12px 12px; /* kanan untuk icon toggle */
   border: 1px solid #888;
   border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 40px;
 }
 
-textarea{
-  width: 460px;
-  padding: 12px 40px 12px 12px;
+textarea {
+  width: 550px;
+  padding: 12px;
   border: 1px solid #888;
   border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  min-height: 80px;
 }
 
 input::placeholder,
@@ -52,7 +64,7 @@ textarea::placeholder {
   font-size: 16px;
 }
 
-.btn-signup{
+.btn-signup {
   background-color: #c0392b; 
   color: white;
   border: none;
@@ -61,15 +73,17 @@ textarea::placeholder {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  width: 500px;
+  width: 500px; /* tombol lebih kecil dari input */
   transition: background-color 0.3s ease;
+  height: 45px;
+  box-sizing: border-box;
 }
 
-.btn-signup:hover{
+.btn-signup:hover {
   background-color: #e74c3c;
 }
 
-small{
+small {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,33 +91,54 @@ small{
   padding-top: 10px;
 }
 
-small a{
+small a {
   color: black;
 }
   
-.btn-masuk:hover{
+.btn-masuk:hover {
   color: #c0392b;
 }
 
-.password-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+/* Password wrapper & toggle icon */
+.password-wrapper {
+  position: relative;
+  width: 550px; /* disamakan dengan input */
   margin-bottom: 15px;
 }
-  
+
+.password-wrapper input.password-input {
+  width: 100%;
+  padding-right: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
 .toggle-password {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.toggle-password img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-#password-admin{
-  margin-bottom: 20px;
+/* Responsive kecil */
+@media (max-width: 500px) {
+  .Name input,
+  input,
+  textarea,
+  .password-wrapper,
+  .btn-signup {
+    width: 90vw;
+  }
 }

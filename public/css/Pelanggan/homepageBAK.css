@@ -20,63 +20,60 @@ body {
 }
 
 .menu-overlay {
-  position: relative;
-  margin: -120px auto 60px; /* naik ke atas sedikit, lalu beri jarak bawah */
+  margin-top: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   background-color: rgba(255, 255, 255, 0);
   border-radius: 15px;
   padding: 30px 20px;
-  width: 90%;
   max-width: 1000px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  margin-top: clamp(650px, 15vh, 1150px);
 }
 
 .menu-images {
-  display: flex;
-  flex-wrap: nowrap; /* tetap satu baris */
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
   width: 100%;
-  overflow: hidden; /* hilangkan scroll */
+  margin-bottom: 20px;
+  padding: 0 10px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-card {
-  flex: 1 1 0; /* grow=1, shrink=1, basis=0 agar fleksibel */
-  min-width: 0; /* agar boleh sekecil apapun saat menyempit */
-  max-width: 150px;
   background-color: #fff;
-  aspect-ratio: 3 / 4;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
 }
 
 .menu-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 6px;
-  flex-grow: 0;
+  border-radius: 8px;
 }
 
 .menu-card h3 {
   margin-top: 10px;
+  font-size: 16px;
   color: #333;
   font-weight: 600;
-  font-size: clamp(1px, 1.5vw, 18px);
 }
-
 
 /* ------------------ Tombol Order ------------------ */
 .btn-order {
-  margin-top: 2vh;
   padding: 14px 32px;
   font-size: 18px;
   background-color: #333;
@@ -156,7 +153,7 @@ body {
   }
 
   .menu-card h3 {
-    font-size: 45%;
+    font-size: 15px;
   }
 
   .btn-order {

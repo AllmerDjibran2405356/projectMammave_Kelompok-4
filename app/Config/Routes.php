@@ -57,6 +57,7 @@ $routes->get('/Pelanggan/controllerPemesanan/checkoutSuccess', 'Pelanggan\contro
 //riwayat pemesanan
 $routes->get('/Pelanggan/controllerRiwayatPemesanan', 'Pelanggan\controllerRiwayatOrder::viewRiwayatOrder');
 $routes->post('/Pelanggan/controllerRiwayatPemesanan/isiOrder', 'Pelanggan\controllerRiwayatOrder::isiOrder');
+$routes->get('Pelanggan/controllerRiwayatOrder/ajaxIsiOrder', 'Pelanggan\controllerRiwayatOrder::ajaxIsiOrder');
 
 //register akun pelanggan
 $routes->get('/Pelanggan/controllerRegisterAkunPelanggan', 'Pelanggan\controllerRegisterAkunPelanggan::viewRegister');
