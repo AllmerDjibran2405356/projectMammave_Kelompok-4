@@ -2,19 +2,107 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background-color: #f8f9fa;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
-.top, .bottom {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+.container {
+    max-width: 960px; /* batas maksimal container */
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
 }
-  
-.bottom {
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.dashboard-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    min-height: 160px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logout-card {
+    background-color: #dc3545;
+    color: white;
+    cursor: default;
+}
+
+.logout-card:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments */
+
+/* Untuk layar kecil (mobile) */
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .row.g-4 {
+        gap: 1rem; /* Bootstrap default gap di row */
+    }
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .dashboard-card {
+        min-height: auto;
+        padding: 15px;
+        font-size: 14px;
+    }
+    .card-title {
+        font-size: 1.25rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+    h1 {
+        margin-top: 20px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Untuk tablet kecil sampai medium */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        max-width: 720px;
+    }
+    .dashboard-card {
+        min-height: 150px;
+    }
+}
+
+/* Untuk tablet besar dan desktop kecil */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+/* Atur tombol logout agar full width di mobile */
+@media (max-width: 575.98px) {
+    .logout-card button.btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
 }

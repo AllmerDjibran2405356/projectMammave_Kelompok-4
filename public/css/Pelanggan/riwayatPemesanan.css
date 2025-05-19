@@ -15,19 +15,43 @@ body {
     box-sizing: border-box;
 }
 
-/* Main container */
 .main-layout {
     width: 100%;
-    max-width: 700px;  /* maksimal lebar container */
+    max-width: 700px;
     background-color: #fff;
     border-radius: 20px;
     padding: 30px 25px;
 
-    /* Padding top agar tidak tertutup navbar fixed */
-    padding-top: 80px;
+    /* Ganti padding-top jadi margin-top */
+    margin-top: 120px;  /* misal jarak default lebih jauh */
 
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     box-sizing: border-box;
+}
+
+/* Margin-top responsif */
+@media (max-width: 1025px) {
+    .main-layout {
+        margin-top: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-layout {
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 415px) {
+    .main-layout {
+        margin-top: 150px;
+    }
 }
 
 /* Responsive padding top untuk navbar */

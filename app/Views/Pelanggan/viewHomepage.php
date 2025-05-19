@@ -17,8 +17,8 @@
   <div class="menu-overlay">
     <div class="menu-images">
       <div class="menu-card">
-        <img src="<?= base_url('images/homepage/gambar 1.png') ?>" alt="Lasagna">
-        <h3>Lasagna</h3>
+        <img src="<?= base_url('images/homepage/gambar 1.png') ?>" alt="Pizza">
+        <h3>Pizza</h3>
       </div>
       <div class="menu-card">
         <img src="<?= base_url('images/homepage/gambar 2.png') ?>" alt="Calzone">
